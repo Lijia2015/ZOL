@@ -11,8 +11,4 @@
 </script>
 
 <style lang="scss">
-	.app-footer{
-		height: 49px;
-		background: skyblue;
-	}
 </style>

@@ -1,6 +1,40 @@
 <template>
 	<div class="app-content">
-		我是内容区域
+		<ul>
+			<li>
+				<div>haha</div>
+			</li>
+			<li>
+				<div>haha</div>
+			</li>
+			<li>
+				<div>haha</div>
+			</li>
+			<li>
+				<div>haha</div>
+			</li>
+			<li>
+				<div>haha</div>
+			</li>
+			<li>
+				<div>haha</div>
+			</li>
+			<li>
+				<div>haha</div>
+			</li>
+			<li>
+				<div>haha</div>
+			</li>
+			<li>
+				<div>haha</div>
+			</li>
+			<li>
+				<div>haha</div>
+			</li>
+			<li>
+				<div>haha</div>
+			</li>
+		</ul>
 	</div>
 </template>
 
@@ -11,8 +45,4 @@
 </script>
 
 <style lang="scss">
-	.app-header{
-		
-		background: green;
-	}
 </style>

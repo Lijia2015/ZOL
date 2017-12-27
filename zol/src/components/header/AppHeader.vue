@@ -11,8 +11,5 @@
 </script>
 
 <style lang="scss">
-	.app-header{
-		height: 44px;
-		background: red;
-	}
+	
 </style>
