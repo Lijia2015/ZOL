@@ -11,10 +11,8 @@
 </script>
 
 <style lang="scss">
-	$base-color:red;
 	$font-color:green;
 	.app-main{
-		background: $base-color;
 		color:$font-color;
 	}
 	
