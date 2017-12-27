@@ -1,19 +1,28 @@
 <template>
 	<div class="app-main">
-		呵呵呵，很多很多黄金时代颠三倒四出具的市场价四渡赤水
+		<app-header></app-header>
+		<app-content></app-content>
+		<app-footer></app-footer>
 	</div>
 </template>
 
 <script>
+	
+	import AppHeader from '../header/AppHeader'
+	import AppContent from '../content/AppContent'
+	import AppFooter from '../footer/AppFooter'
+	
 	export default{
-		name:'app-main'
+		name:'app-main',
+		components:{
+			AppHeader,
+			AppContent,
+			AppFooter
+		},
 	}
 </script>
 
 <style lang="scss">
-	$font-color:green;
-	.app-main{
-		color:$font-color;
-	}
+	
 	
 </style>
