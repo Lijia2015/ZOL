@@ -1,18 +1,18 @@
 <template>
 	<div class="app-footer">
-		<div class="foot-nav" @click="changeNav('home')" :class="[showType=='home'?'foot-cur':'']">
+		<div class="foot-nav" @click="changeNav('home')" :class="[type=='home'?'foot-cur':'']">
 			<i class="yo-ico">&#xe640;</i>
 			<span>首页</span>
 		</div>
-		<div class="foot-nav" @click="changeNav('category')" :class="[showType=='category'?'foot-cur':'']">
+		<div class="foot-nav" @click="changeNav('category')" :class="[type=='category'?'foot-cur':'']">
 			<i class="yo-ico">&#xe6b2;</i>
 			<span>分类</span>
 		</div>
-		<div class="foot-nav" @click="changeNav('car')" :class="[showType=='car'?'foot-cur':'']">
+		<div class="foot-nav" @click="changeNav('car')" :class="[type=='car'?'foot-cur':'']">
 			<i class="yo-ico">&#xe621;</i>
 			<span>购物车</span>
 		</div>
-		<div class="foot-nav" @click="changeNav('mine')" :class="[showType=='mine'?'foot-cur':'']">
+		<div class="foot-nav" @click="changeNav('mine')" :class="[type=='mine'?'foot-cur':'']">
 			<i class="yo-ico">&#xe68f;</i>
 			<span>我的</span>
 		</div>
@@ -20,32 +20,29 @@
 </template>
 
 <script>
-	
 	export default{
 		name:'app-footer',
 		data(){
 			return {
-				showType:'home',
+				type:'home',
 				navs:[
-					{id:1,name:'首页',path:'home',icon:'&#xe640;'},
-					{id:2,name:'分类',path:'category',icon:'&#xe640;'},
-					{id:3,name:'购物车',path:'car',icon:'&#xe640;'},
-					{id:4,name:'我的',path:'mine',icon:'&#xe640;'},
+					{id:1,name:'首页',path:'home'},
+					{id:2,name:'分类',path:'category'},
+					{id:3,name:'购物车',path:'car'},
+					{id:4,name:'我的',path:'mine'},
 				],
 			};
 		},
 		methods:{
 			
-			changeNav(path){
-
-				this.$router.push(path);
-				this.showType = path;
+			changeNav(name){
+				
+				this.type = name;
+				this.$router.push(name);
 			}
 			
 		},
 	}
-	
-
 </script>
 
 <style lang="scss">
