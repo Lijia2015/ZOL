@@ -8,11 +8,11 @@
 			<i class="yo-ico">&#xe6b2;</i>
 			<span>分类</span>
 		</div>
-		<div class="foot-nav" @click="changeNav('car')" :class="[type=='car'?'foot-cur':'']">
+		<div class="foot-nav" @click="lOrRChange('car')" :class="[type=='car'?'foot-cur':'']">
 			<i class="yo-ico">&#xe621;</i>
 			<span>购物车</span>
 		</div>
-		<div class="foot-nav" @click="changeNav('mine')" :class="[type=='mine'?'foot-cur':'']">
+		<div class="foot-nav" @click="lOrRChange('mine')" :class="[type=='mine'?'foot-cur':'']">
 			<i class="yo-ico">&#xe68f;</i>
 			<span>我的</span>
 		</div>
@@ -37,6 +37,10 @@
 			
 			changeNav(name){
 				
+				this.type = name;
+				this.$router.push(name);
+			},
+			lOrRChange(name){
 				this.type = name;
 				this.$router.push(name);
 			}
