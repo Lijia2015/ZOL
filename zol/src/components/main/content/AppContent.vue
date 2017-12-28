@@ -1,12 +1,13 @@
 <template>
-	<div class="app-footer">
-		我是底部导航
+	<div class="app-content">
+		<router-view></router-view>
 	</div>
 </template>
 
 <script>
+	
 	export default{
-		name:'app-footer'
+		name:'app-content'
 	}
 </script>
 
