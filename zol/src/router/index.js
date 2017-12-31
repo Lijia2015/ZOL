@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
+
+//引进路由模块
 import AppMain from '../components/main/AppMain'
 import AppLogin from '../components/login/AppLogin'
 import AppRegister from '../components/register/AppRegister'
@@ -10,6 +12,8 @@ import AppCategory from '../components/main/content/children/category/AppCategor
 import AppShopCar from '../components/main/content/children/shoppingCar/AppShoppingCar'
 import AppMine from '../components/main/content/children/mine/AppMine'
 
+
+//设置路由
 Vue.use(Router)
 
 const routes = [

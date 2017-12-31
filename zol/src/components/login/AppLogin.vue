@@ -1,7 +1,9 @@
 <template>
 	<div class="app-login content-box">
 		<div class="app-header">
-			<router-link to='/' tag='a'>返回</router-link>
+			<router-link to='/' tag='a' class="yo-ico">&#xe600;</router-link>
+			<span>手机号快捷登录</span>
+			<p>hah</p>
 		</div>
 	</div>
 </template>

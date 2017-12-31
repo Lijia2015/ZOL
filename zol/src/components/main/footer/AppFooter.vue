@@ -37,7 +37,7 @@
 		data(){
 			return {
 				type:'home',
-				user:localStorage.user?JSON.parse(localStorage.user):'',
+				user:this.$store.state.user?JSON.parse(this.$store.state.user):'',
 				navs:[
 					{id:1,name:'首页',path:'home'},
 					{id:2,name:'分类',path:'category'},
@@ -46,10 +46,15 @@
 				],
 			};
 		},
+		mounted(){
+			
+			console.log(this.$store.state.user);
+		},
 		methods:{
 			changeNav(name){
 				this.type = name;
 				this.$router.push(name);
+				console.log(this);
 			},
 			lOrRChange(name){
 				this.type = name;
