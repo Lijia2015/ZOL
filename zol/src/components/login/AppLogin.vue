@@ -1,6 +1,8 @@
 <template>
 	<div class="app-login content-box">
-		<p>我是登录页面</p>
+		<div class="app-header">
+			<router-link to='/' tag='a'>返回</router-link>
+		</div>
 	</div>
 </template>
 
@@ -13,5 +15,9 @@
 	
 </script>
 
-<style>
+<style lang="scss">
+	.app-header{
+		height: 0.49rem;
+		background: skyblue;
+	}
 </style>
