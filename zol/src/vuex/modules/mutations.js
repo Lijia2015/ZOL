@@ -5,6 +5,8 @@
 const mutations = {
 	
 	onLogin(state){
+		
+		//更改state中的user数据
 		state.user = JSON.parse(localStorage.user);
 	},
 }
