@@ -6,6 +6,8 @@ import router from './router'
 import store from './vuex/store'
 
 import './style/usage/app.scss'
+import '../node_modules/swiper/dist/css/swiper.min.css'
+
 
 Vue.config.productionTip = false
 

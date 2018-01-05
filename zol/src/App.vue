@@ -1,12 +1,16 @@
 <template>
   <div id="app">
-    <router-view/>
+    <router-view :back = "back"></router-view>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'app'
+	methods:{
+		back(){
+			this.$router.go(-1);
+		}
+	}
 }
 </script>
 
