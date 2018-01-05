@@ -20,7 +20,7 @@
 				温馨提示：未注册ZOL账号的手机号，手机号快捷登录时，将自动注册ZOL账号
 			</p>
 			<div class="btns">
-				<router-link to="/main" tag="input"  type="submit" id="login" value="立即登录" />
+				<router-link to="/" tag="input"  type="submit" id="login" value="立即登录" />
 				<a href="#" class="else-login">已有账号登录</a>
 				<div class="need-help">
 					<a href="#">忘记密码</a>
