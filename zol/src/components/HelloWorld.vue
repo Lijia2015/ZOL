@@ -12,7 +12,7 @@
 
 <script>
 	
-	//数据请求
+	//1:数据请求
 	import axios from 'axios';
 	
 	export default{
