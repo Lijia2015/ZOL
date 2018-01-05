@@ -1,14 +1,35 @@
 <template>
-	<div class="app-category main-box">
-		我是分类
+	<div class="app-category">
+		<header>
+			<div @click="back" class="header-back"></div>
+			<p>全部分类</p>
+		</header>
 	</div>
 </template>
 
 <script>
 	export default{
-		name:'app-category'
+		name:"app-category",
+		props:["back"]
 	}
 </script>
 
-<style>
+
+<style lang="scss" scoped>
+
+	header{
+		width: 100%;
+		height: .42rem;
+		background: #f9f9f9;
+		text-align: center;
+		line-height: .4rem;
+		color: #333;
+		.header-back{
+			position: absolute;
+			display: block;
+			width: .4rem;
+			height: .4rem;
+			background: yellow;
+		}
+	} 
 </style>

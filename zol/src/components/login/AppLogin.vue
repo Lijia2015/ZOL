@@ -1,21 +1,194 @@
 <template>
-	<div class="app-login content-box login-box">
+	<div class="app-login">
+		<header>
+			<i @click="back" class="header-back"></i>
+			<p>手机号快捷登录</p>
+		</header>
+		<section>
+			<div class="tel">
+				<p>
+					<i></i>
+					<input type="tel" id="txt" placeholder="请输入手机号" />
+				</p>
+				<p>
+					<i></i>
+					<input type="text" placeholder="请输入短信验证码" />
+					<span class="identifying">获取验证码</span>
+				</p>
+			</div>
+			<p class="Reminder">
+				温馨提示：未注册ZOL账号的手机号，手机号快捷登录时，将自动注册ZOL账号
+			</p>
+			<div class="btns">
+				<router-link to="/main" tag="input"  type="submit" id="login" value="立即登录" />
+				<a href="#" class="else-login">已有账号登录</a>
+				<div class="need-help">
+					<a href="#">忘记密码</a>
+					<router-link to='/register' tag="a">
+						注册账号
+					</router-link>
+					<!--<a href="/register">注册账号</a>-->
+				</div>
+			</div>
+			<div class="other-way">
+				<p>使用第三方帐号登录</p>
+				<ul class="other-login-way">
+					<li>
+						<a href="#"></a>
+					</li>
+					<li>
+						<a href="#"></a>
+					</li>
+					<li>
+						<a href="#"></a>
+					</li>
+				</ul>
+			</div>
+			
+		</section>
 		
 	</div>
 </template>
 
 <script>
-	
-	export default{
-		
-		name:'app-login',
+	export default {
+		name:"app-login",
+		props:["back"]
 	}
-	
 </script>
 
-<style lang="scss">
-	.app-header{
-		background: #f5f5f5;
+<style lang="scss" scoped>
+	header{
+		width: 100%;
+		height: .48rem;
+		border-bottom: 1px solid #d9d9d9;
+    	background: #f5f5f5;
+    	display: flex;
+    	i{
+    		display: block;
+    		width: .48rem;
+    		height: 100%;
+    		background: red;
+    	}
+    	p{
+    		width: 2.95rem;
+    		height: 100%;
+    		text-align: center;
+    		line-height: .48rem;
+    		font-weight: 400;
+    		font-size: 18px;
+    	}
 	}
-	
+	section{
+		input{
+			border: 0;
+		}
+		.tel{
+			width: 100%;
+			height: .92rem;
+			background: #fff;
+			
+			p{
+				width: 100%;
+				height: .46rem;
+				font-size: 16px;
+				color: #333;
+				display: flex;
+				line-height: .46rem;
+				#txt{
+					width:3.29rem ;
+					border-bottom: 1px solid #d3d3d3;	
+				}
+				
+				i{
+					display: block;
+					width: .46rem;
+					height: .46rem;
+					background: red;
+				}
+				.identifying{
+					display: block;
+					width: 1rem;
+					height: .29rem;
+					font-size: 12px;
+    				line-height: .29rem;
+    				background:#b2b2b2;
+    				border-radius: 2px;
+    				text-align: center;
+    				margin: 0.09rem 0 0 0.2rem;
+    				color: #fff;
+				}
+			}
+		}
+		.Reminder{
+			width: 100%;
+			height: .45rem;
+			padding: 5px 15px 0;
+		    font-size: 12px;
+		    line-height: 20px;
+		    color: #999;
+		    border-top: 1px solid #d3d3d3;
+		}
+		.btns{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			#login,.else-login{
+				display: block;
+				width: 3.45rem;
+				height: .4rem;
+				text-align: center;
+				line-height: .4rem;
+				margin-top: .2rem;
+			}
+			#login{
+				background: #b2b2b2;
+	    		color: #fff;	
+			}
+			.else-login{
+			    border: 1px solid #f22e00;
+			    font-size: 15px;
+			    color: #f22e00;
+			}
+			.need-help{
+				width: 3.45rem;
+				height: .2rem;
+				display: flex;
+				justify-content: space-between;
+				margin-top: .1rem;
+			}
+		}
+		.other-way{
+			margin-top: .6rem;
+			p{
+				width: 100%;
+				height: .21rem;
+				text-align: center;
+			}
+			p:before,p:after {
+			    content: "";
+			    display: inline-block;
+			    height: 1px;
+			    width: .5rem;
+			    margin: .1rem .08rem 0 0;
+			    background-color: #999;
+			    font: 0/0 arial;
+			    vertical-align: top;
+			}
+			.other-login-way{
+				width: 2rem;
+				height: .4rem;
+				display: flex;
+				text-align: center;
+				margin: 0.2rem auto;
+				justify-content: space-around;
+				li{
+					width: .4rem;
+					height: .4rem;
+					background: yellow;
+					
+				}
+			}
+		}
+	}
 </style>

@@ -3,27 +3,33 @@
 #app{
     height: 100%;
 }
-
+body{
+    background: #e6e6e6;
+}
 .content-box{
     height: 100%;
 }
-
 .app-main{
     
     @include flexbox();
     @include flex-direction(column);
+    @include justify-content(space-between);
     background: white;
+    
     .main-box{
         @include flex();
         width: 100%;
     }
-    
     .app-footer{
         height: 0.49rem;
+        width: 100%;
         border-top: solid 1px #E0E0E0;
         @include flexbox();
         @include justify-content(space-around);
         @include align-items(center);
+        position: fixed;
+        bottom: 0;
+        left: 0;
         .foot-nav{
             color: #666;
             @include flexbox();
