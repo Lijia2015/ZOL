@@ -1,0 +1,19 @@
+{
+	"data":{
+		"banners":[
+			{"id":1,"imgUrl":"/static/images/banners/banner1.jpg"},
+			{"id":2,"imgUrl":"/static/images/banners/banner2.jpg"},
+			{"id":3,"imgUrl":"/static/images/banners/banner3.jpg"}
+		],
+		"navs":[
+			{"id":1,"imgUrl":"/static/images/navs/nav1.png","name":"团购"},
+			{"id":2,"imgUrl":"/static/images/navs/nav2.png","name":"z智选"},
+			{"id":3,"imgUrl":"/static/images/navs/nav3.png","name":"维修"},
+			{"id":4,"imgUrl":"/static/images/navs/nav4.png","name":"领券"},
+			{"id":5,"imgUrl":"/static/images/navs/nav5.png","name":"手机"},
+			{"id":6,"imgUrl":"/static/images/navs/nav6.png","name":"电脑"},
+			{"id":7,"imgUrl":"/static/images/navs/nav7.png","name":"DIY"},
+			{"id":8,"imgUrl":"/static/images/navs/nav8.png","name":"相机"}
+		]
+	}
+}
