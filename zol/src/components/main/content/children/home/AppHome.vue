@@ -5,8 +5,9 @@
 </template>
 
 <script>
+	
 	export default{
-		name:'app-home'
+		name:'app-home',
 	}
 </script>
 
