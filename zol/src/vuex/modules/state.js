@@ -8,6 +8,8 @@
 const state = {
 	
 	user:localStorage.user?JSON.parse(localStorage.user):'',	
+    city:'北京',
+	positionShow: false
 }
 
 export default state
