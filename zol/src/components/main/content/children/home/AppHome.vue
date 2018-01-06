@@ -8,9 +8,11 @@
 </template>
 
 <script>
+	
 	import AppHeader from './AppHeader.vue'
 	import AppBanner from './AppBanner.vue'
 	import AppNav from './AppNav.vue'
+	
 	export default {
 	    name:"app-home",
 	    components:{

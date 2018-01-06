@@ -1,10 +1,15 @@
 <template>
+	
 	<div class="app-header">
+		<app-position v-show="positionShow"></app-position>
 		<header>
 	   		<div class="logo">
 	   			
 	   		</div>
-	   		<span>北京<i class="fa fa-angle-down"></i></span>
+	   		<span @click="isShow">
+	   			{{city}}
+	   			<i class="fa fa-angle-down"></i>
+	   		</span>
 	   		<div class="search">
 	   			<i class="fa fa-search"></i>
 	   			<input type="text" placeholder="iphone7"/>
@@ -13,12 +18,30 @@
 	   			登录
 	   		</router-link>
 	   </header>
+	   
 	</div>
 </template>
 
 <script>
+	import AppPosition from './AppPosition'
+	import {mapState,mapActions} from 'vuex'
+	
 	export default {
-		name:"app-header"
+		name:"app-header",
+		components:{AppPosition},
+		computed:{
+        	...mapState(['city','positionShow'])
+        },
+        methods:{
+        	...mapActions(['getPosition']),
+        	isShow(){
+        		this.$store.commit('isShow')
+        	}
+        },
+//      mounted(){
+//      	//开始定位
+//      	this.getPosition()
+//      }
 	}
 </script>
 

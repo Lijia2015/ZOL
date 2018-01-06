@@ -9,6 +9,16 @@ const mutations = {
 		//更改state中的user数据
 		state.user = JSON.parse(localStorage.user);
 	},
+	
+	getPosition(state,city){
+		
+    	state.city = city
+    	
+  	},
+	  isShow(state){
+	  	state.positionShow = !state.positionShow
+	  }
+
 }
 
 export default mutations
