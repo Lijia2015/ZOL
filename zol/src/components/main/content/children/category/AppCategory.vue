@@ -1,5 +1,5 @@
 <template>
-	<div class="app-category">
+	<div class="app-category main-box">
 		<header>
 			<div @click="back" class="header-back"></div>
 			<p>全部分类</p>
