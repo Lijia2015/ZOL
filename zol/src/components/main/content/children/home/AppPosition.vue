@@ -6,7 +6,7 @@
        </div>       
        <ul class="global-city-box">
        		<li class="global">
-       			{{city}}
+       			全国
        		</li>
        </ul>
        <div class="title">

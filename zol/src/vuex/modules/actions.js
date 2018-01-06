@@ -1,3 +1,4 @@
+import getPosition from './getPosition'
 const actions = {
 	getPosition({commit}){
 		console.log(getPosition)

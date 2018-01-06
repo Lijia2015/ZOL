@@ -21,10 +21,10 @@
 	   
 	</div>
 </template>
-
 <script>
 	import AppPosition from './AppPosition'
 	import {mapState,mapActions} from 'vuex'
+	
 	
 	export default {
 		name:"app-header",
@@ -38,10 +38,10 @@
         		this.$store.commit('isShow')
         	}
         },
-//      mounted(){
-//      	//开始定位
-//      	this.getPosition()
-//      }
+        mounted(){
+        	//开始定位
+        	this.getPosition()
+        }
 	}
 </script>
 

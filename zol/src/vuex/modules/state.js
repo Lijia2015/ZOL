@@ -8,7 +8,7 @@
 const state = {
 	
 	user:localStorage.user?JSON.parse(localStorage.user):'',	
-    city:'北京',
+    city:'',
 	positionShow: false
 }
 
