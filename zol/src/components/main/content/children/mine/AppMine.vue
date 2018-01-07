@@ -1,5 +1,5 @@
 <template>
-	<div class="app-mine my">
+	<div class="app-mine my main-box">
 		<header>
 			<div @click="back" class="header-back"></div>
 			<p>Z商城买家中心</p>

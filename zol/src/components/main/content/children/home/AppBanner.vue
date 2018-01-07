@@ -1,5 +1,4 @@
 <template>
-	
 	<div class="app-banner">
 		<div class="banner-container swiper-container clearfix">
 		    <div class="swiper-wrapper banner">

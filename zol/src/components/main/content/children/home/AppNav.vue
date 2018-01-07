@@ -15,21 +15,19 @@
 	    methods:{
         getData(){
             let that = this
-//          http://m.zol.com/index.php?c=Shop_IndexV2&a=AjaxGetGoods&pos=1&page=2
-            axios.get('http://localhost:8080/zol/index.php',{
-                params:{
-                	c:'Shop_IndexV2',
-									a:'AjaxGetGoods',
-									pos:2,
-									page:2
-                }
-            }).then((response)=>{
-                console.log(response)
+            axios.get('/static/JSONS/GoodSAS.json').then((res)=>{
+            	
+                console.log(res)
+                
+            }).catch((err)=>{
+            	
+            	console.log(err)
+            	
             })
         },
     },
     created(){
-//      this.getData()
+        this.getData()
     },
 	}
 </script>
