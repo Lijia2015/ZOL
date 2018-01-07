@@ -53,7 +53,7 @@
 
 <script>
 	import {mapState} from 'vuex'
-	
+	import { Toast } from 'mint-ui';
 	export default {
 		name:"app-login",
 		props:["back"],
@@ -71,7 +71,7 @@
 		methods:{
 			onlogin(params){
 				if(this.user_info == ''){
-					alert("登陆失败")
+					Toast('登陆失败');
 					return
 				}
 				let login_info = JSON.parse(localStorage.user_info)
@@ -80,11 +80,11 @@
 				setTimeout(()=>{
 					
 					if(login_info.user_name == params.user_name && login_info.user_password == params.user_password){
-						alert("登陆成功")
+						Toast("登陆成功")
 						this.$store.commit('loginShow')
 						that.$router.push({name:'home'})
 					}else{
-						alert("登陆失败")
+						Toast('登陆失败');
 					}
 					
 				})
