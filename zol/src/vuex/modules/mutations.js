@@ -3,22 +3,35 @@
 /**/
 
 const mutations = {
-	
-	onLogin(state){
-		
+	//注册
+	register(state,user_info){
 		//更改state中的user数据
-		state.user = JSON.parse(localStorage.user);
+		state.user_info = user_info
+		localStorage.user_info = JSON.stringify(user_info)
 	},
 	
+//	login(state,user_info){
+//		let login_info = JSON.parse(localStorage.user_info)
+//		if(login_info.user_name == user_info.user_name && login_info.user_password == user_info.user_password){
+//			alert("登陆成功")
+//		}else{
+//			alert("登陆失败")
+//		}
+//	},
+	
+	
+	//定位
 	getPosition(state,city){
+		state.city = city
+	},
+	//定位组件的显示隐藏
+	isShow(state){
+		state.positionShow = !state.positionShow
+	},
+	loginShow(state){
+		state.loginShow = !state.loginShow
 		
-    	state.city = city
-    	
-  	},
-	  isShow(state){
-	  	state.positionShow = !state.positionShow
-	  }
-
+	}
 }
 
 export default mutations

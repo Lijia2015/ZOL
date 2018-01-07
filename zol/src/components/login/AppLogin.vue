@@ -1,59 +1,95 @@
 <template>
 	<div class="app-login">
-		<header>
-			<i @click="back" class="header-back"></i>
-			<p>手机号快捷登录</p>
-		</header>
-		<section>
-			<div class="tel">
-				<p>
-					<i></i>
-					<input type="tel" id="txt" placeholder="请输入手机号" />
-				</p>
-				<p>
-					<i></i>
-					<input type="text" placeholder="请输入短信验证码" />
-					<span class="identifying">获取验证码</span>
-				</p>
-			</div>
-			<p class="Reminder">
-				温馨提示：未注册ZOL账号的手机号，手机号快捷登录时，将自动注册ZOL账号
-			</p>
-			<div class="btns">
-				<router-link to="/" tag="input"  type="submit" id="login" value="立即登录" />
-				<a href="#" class="else-login">已有账号登录</a>
-				<div class="need-help">
-					<a href="#">忘记密码</a>
-					<router-link to='/register' tag="a">
-						注册账号
-					</router-link>
-					<!--<a href="/register">注册账号</a>-->
+		<form @submit.prevent="onlogin({user_name:user_list.user_name,user_password:user_list.user_password})">
+			<header>
+				<i @click="back" class="header-back"></i>
+				<p>手机号快捷登录</p>
+			</header>
+			<section>
+				<div class="tel">
+					<p>
+						<i></i>
+						<input v-model="user_list.user_name" type="tel" id="txt" placeholder="请输入手机号" />
+					</p>
+					<p>
+						<i></i>
+						<input v-model="user_list.user_password" type="text" placeholder="请输入短信验证码" />
+						<span class="identifying">获取验证码</span>
+					</p>
 				</div>
-			</div>
-			<div class="other-way">
-				<p>使用第三方帐号登录</p>
-				<ul class="other-login-way">
-					<li>
-						<a href="#"></a>
-					</li>
-					<li>
-						<a href="#"></a>
-					</li>
-					<li>
-						<a href="#"></a>
-					</li>
-				</ul>
-			</div>
-			
-		</section>
-		
+				<p class="Reminder">
+					温馨提示：未注册ZOL账号的手机号，手机号快捷登录时，将自动注册ZOL账号
+				</p>
+				<div class="btns">
+					<input type="submit" id="login" value="立即登录" />
+					<a href="#" class="else-login">已有账号登录</a>
+					<div class="need-help">
+						<a href="#">忘记密码</a>
+						<router-link to='/register' tag="a">
+							注册账号
+						</router-link>
+						<!--<a href="/register">注册账号</a>-->
+					</div>
+				</div>
+				<div class="other-way">
+					<p>使用第三方帐号登录</p>
+					<ul class="other-login-way">
+						<li>
+							<a href="#"></a>
+						</li>
+						<li>
+							<a href="#"></a>
+						</li>
+						<li>
+							<a href="#"></a>
+						</li>
+					</ul>
+				</div>
+				
+			</section>
+		</form>
 	</div>
 </template>
 
 <script>
+	import {mapState} from 'vuex'
+	
 	export default {
 		name:"app-login",
-		props:["back"]
+		props:["back"],
+		data(){
+			return{
+				user_list:{
+					user_name:'',
+					user_password:''
+				}
+			}
+		},
+		computed:{
+			...mapState(['user_info','loginShow'])
+		},
+		methods:{
+			onlogin(params){
+				if(this.user_info == ''){
+					alert("登陆失败")
+					return
+				}
+				let login_info = JSON.parse(localStorage.user_info)
+//				console.log(login_info)
+				let that = this
+				setTimeout(()=>{
+					
+					if(login_info.user_name == params.user_name && login_info.user_password == params.user_password){
+						alert("登陆成功")
+						this.$store.commit('loginShow')
+						that.$router.push({name:'home'})
+					}else{
+						alert("登陆失败")
+					}
+					
+				})
+			},
+		}
 	}
 </script>
 
