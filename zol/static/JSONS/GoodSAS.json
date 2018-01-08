@@ -53,7 +53,7 @@
 		"recommend":{
 			"imgUrl":"http://i1.mercrt.fd.zol-img.com.cn/g5/M00/0C/00/ChMkJ1nDXXyIbrDKAAByE_ikGScAAgrGgHpn38AAHIr521.jpg",
 			"node":"今日推荐",
-			"link":"http://m.zol.com/shop_196068/29435137.html?skuId=9988989&amp;suitSetId=1&amp;spm=2045.46269"
+			"link":"http://m.zol.com/shop_196068/29435137.html?skuId=9988989&suitSetId=1&spm=2045.46269"
 		},
 		"groupShop":[
 			{
@@ -61,42 +61,43 @@
 				"oldPrice":"4799",
 				"curPrice":"4299",
 				"imgUrl":"http://i0.mercrt.fd.zol-img.com.cn/t_s400x300/g5/M00/0E/0E/ChMkJ1pPTWaIIrUeAACZI9EH4r4AAj2XABk4IAAAJk7686.jpg",
-				"link":"http://m.zol.com/shop_191490/29967613.html?skuId=10873125&amp;suitSetId=1"
+				"link":"http://m.zol.com/shop_191490/29967613.html?skuId=10873125&suitSetId=1"
 			},
 			{
 				"id":8651310,
 				"oldPrice":"299",
 				"curPrice":"156",
 				"imgUrl":"http://i3.mercrt.fd.zol-img.com.cn/t_s400x300/g5/M00/07/03/ChMkJ1nnFDeINQmDAABr3rnEYP8AAhXjwCGM4AAAGv2243.jpg",
-				"link":"http://m.zol.com/shop_192048/27675027.html?skuId=8651310&amp;suitSetId=1"
+				"link":"http://m.zol.com/shop_192048/27675027.html?skuId=8651310&suitSetId=1"
+				
 			},
 			{
 				"id":8640713,
 				"oldPrice":"68",
 				"curPrice":"200",
 				"imgUrl":"http://i1mercrt.fd.zol-img.com.cn/t_s400x300/g5/M00/07/04/ChMkJlm2TxGIaJosAAFujKQJYtYAAgYFQLNHs4AAW6k331.jpg",
-				"link":"http://m.zol.com/shop_192048/27675027.html?skuId=8640713&amp;suitSetId=1"
+				"link":"http://m.zol.com/shop_192048/27675027.html?skuId=8640713&suitSetId=1"
 			},
 			{
 				"id":10682890,
 				"oldPrice":"129",
 				"curPrice":"67",
 				"imgUrl":"http://i4.mercrt.fd.zol-img.com.cn/t_s400x300/g5/M00/0E/0E/ChMkJ1pPSECIDwK4AABehsJU5M8AAj2VAPUEdUAAF6e784.jpg",
-				"link":"http://m.zol.com/shop_192048/27675027.html?skuId=10682890&amp;suitSetId=1"
+				"link":"http://m.zol.com/shop_192048/27675027.html?skuId=10682890&suitSetId=1"
 			},
 			{
 				"id":10682891,
 				"oldPrice":"159",
 				"curPrice":"68",
 				"imgUrl":"http://i1.mercrt.fd.zol-img.com.cn/t_s400x300/g5/M00/0E/0E/ChMkJlpPR66ITY7gAABD9B42oo8AAj2VAEzZsEAAEQM327.jpg",
-				"link":"http://m.zol.com/shop_192048/27675027.html?skuId=10682891&amp;suitSetId=1"
+				"link":"http://m.zol.com/shop_192048/27675027.html?skuId=10682891&suitSetId=1"
 			},
 			{
 				"id":11938419,
 				"oldPrice":"6099",
 				"curPrice":"5859",
 				"imgUrl":"http://i0.mercrt.fd.zol-img.com.cn/t_s400x300/g5/M00/0E/0E/ChMkJlpPRyOIbFXpAACkn7vYUzwAAj2UwMHPacAAKS3920.jpg",
-				"link":"http://m.zol.com/shop_191490/30513757.html?skuId=11938419&amp;suitSetId=1"
+				"link":"http://m.zol.com/shop_191490/30513757.html?skuId=11938419&suitSetId=1"
 			}
 		],
 		"cityShop":{
@@ -157,64 +158,69 @@
 			
 			"tipPic":{
 				"imgUrl":"http://i2.mercrt.fd.zol-img.com.cn/g5/M00/03/0F/ChMkJlnd8KmIDA4AAADn8m_h-KkAAhKuQOE2dsAAOgK318.jpg",
-				"link":"http://m.zol.com/shop_195351/29169691.html?skuId=9556053&amp;suitSetId=1&amp;spm=2035.46218"
+				"link":"http://m.zol.com/shop_195351/29169691.html?skuId=9556053&suitSetId=1&spm=2035.46218"
 			},
 			"selects":[
 				{
 					"id":"11208399",
 					"imgUrl":"http://i0.mercrt.fd.zol-img.com.cn/g5/M00/0C/01/ChMkJlnDcZaIYM2kAABDAIlJZcYAAgrPQFZg5wAAEMY420.jpg",
-					"link":"http://m.zol.com/shop_195770/30084298.html?skuId=11208399&amp;suitSetId=1&amp;spm=2035.46219"
+					"link":"http://m.zol.com/shop_195770/30084298.html?skuId=11208399&suitSetId=1&spm=2035.46219",
+					"sign":""
 				},
 				{
 					"id":"7790184",
 					"imgUrl":"http://i2.mercrt.fd.zol-img.com.cn/g5/M00/0C/01/ChMkJlnDcWSIDXJ8AAA8JrICDtQAAgrPANpgDMAADw-338.jpg",
-					"link":"http://m.zol.com/shop_194178/27983200.html?skuId=7790184&amp;suitSetId=1&amp;spm=2035.46221"
+					"link":"http://m.zol.com/shop_194178/27983200.html?skuId=7790184&suitSetId=1&spm=2035.46221",
+					"sign":""
 				},
 				{
 					"id":"25616619",
 					"imgUrl":"http://i5.mercrt.fd.zol-img.com.cn/g5/M00/0C/01/ChMkJ1nDcgyII5wmAABEuXs1ucAAAgrPgN4HNUAAETR865.jpg",
-					"link":"http://m.zol.com/shop_191303/25616619.html?spm=2035.46222"
+					"link":"http://m.zol.com/shop_191303/25616619.html?spm=2035.46222",
+					"sign":""
 				},
 				{
 					"id":"10061631",
 					"imgUrl":"http://i4.mercrt.fd.zol-img.com.cn/g5/M00/0C/01/ChMkJ1nDc2qIOnWbAAAqMdKiuW0AAgrQgG0I9UAACpJ584.jpg",
-					"link":"http://m.zol.com/shop_194784/28757180.html?skuId=10061631&amp;suitSetId=1&amp;spm=2035.46223"
+					"link":"http://m.zol.com/shop_194784/28757180.html?skuId=10061631&suitSetId=1&spm=2035.46223",
+					"sign":"1"
 				},
 				{
 					"id":"11325773",
 					"imgUrl":"http://i5.mercrt.fd.zol-img.com.cn/g5/M00/0C/01/ChMkJ1nDc6mIGoFsAAAdnI_B7JgAAgrQgK76kwAAB20935.jpg",
-					"link":"http://m.zol.com/shop_197089/30154126.html?skuId=11325773&amp;suitSetId=1&amp;spm=2035.46224"
+					"link":"http://m.zol.com/shop_197089/30154126.html?skuId=11325773&suitSetId=1&spm=2035.46224",
+					"sign":"1"
 				}
 			]
 		},
 		"brandSelect":{
 			"tipPic":{
 				"imgUrl":"http://i3.mercrt.fd.zol-img.com.cn/g5/M00/0C/01/ChMkJlnDfBCIOp24AABxFblZzCcAAgrTwEnUqcAAHEt769.jpg",
-				"link":"http://m.zol.com/index.php?c=Shop_List&amp;str=c34_s57_pm&amp;spm=2046.46280"
+				"link":"http://m.zol.com/index.php?c=Shop_List&str=c34_s57_pm&spm=2046.46280"
 			},
 			"barands":[
 				{
 					"id":10403548,
 					"imgUrl":"http://i4.mercrt.fd.zol-img.com.cn/g5/M00/09/0B/ChMkJ1i_ntGIUlIXAAY7JAArhD0AAajKwEpoIMABjs8384.png",
-					"link":"http://m.zol.com/shop_194974/29652086.html?skuId=10403548&amp;suitSetId=1&amp;spm=2046.46284",
+					"link":"http://m.zol.com/shop_194974/29652086.html?skuId=10403548&suitSetId=1&spm=2046.46284",
 					"name":"荣耀 V9全网通"
 				},
 				{
 					"id":8894161,
 					"imgUrl":"http://i4.mercrt.fd.zol-img.com.cn/g5/M00/0C/01/ChMkJ1nDfr6IPLeaAAFnP2EKJqAAAgrUwByJoUAAWdX664.jpg",
-					"link":"http://m.zol.com/shop_194974/28884785.html?skuId=8894161&amp;suitSetId=1&amp;spm=2046.46283",
+					"link":"http://m.zol.com/shop_194974/28884785.html?skuId=8894161&suitSetId=1&spm=2046.46283",
 					"name":"荣耀 畅玩6X"
 				},
 				{
 					"id":11356000,
 					"imgUrl":"http://i3.mercrt.fd.zol-img.com.cn/g5/M00/0C/01/ChMkJ1nDfvCIdVU-AADy_IiOkcYAAgrUwFqxeMAAPMU313.jpg",
-					"link":"http://m.zol.com/shop_195770/30167126.html?skuId=11356000&amp;suitSetId=1&amp;spm=2046.46282",
+					"link":"http://m.zol.com/shop_195770/30167126.html?skuId=11356000&suitSetId=1&spm=2046.46282",
 					"name":"荣耀 畅玩6A"
 				},
 				{
 					"id":11115534,
 					"imgUrl":"http://i2.mercrt.fd.zol-img.com.cn/g5/M00/0C/01/ChMkJlnDfgyIbnUTAAEeG3Qg0fMAAgrUgE06mEAAR4z188.jpg",
-					"link":"http://m.zol.com/shop_197780/30048988.html?skuId=11115534&amp;suitSetId=1&amp;spm=2046.46281",
+					"link":"http://m.zol.com/shop_197780/30048988.html?skuId=11115534&suitSetId=1&spm=2046.46281",
 					"name":"荣耀9 6GB运存"
 				}
 				
@@ -293,5 +299,6 @@
 				"sign":""
 			}
 		]
+		
 	}
 }
