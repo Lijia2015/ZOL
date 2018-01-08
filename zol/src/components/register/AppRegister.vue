@@ -2,22 +2,24 @@
 	<div class="app-register" >
 		<form @submit.prevent = 'changeUser({user_name:user_list.user_name,user_password:user_list.user_password})'>
 			<header>
-				<i @click="back" class="header-back"></i>
+				<i @click="back" class="header-back yo-ico">
+					&#xf07d;
+				</i>
 				<p>手机快速注册</p>
 			</header>
 			<section>
 				<div class="register-tel">
 					<p>
-						<i></i>
+						<i style="font-size:16px;" class="yo-ico">&#xe68f;</i>
 						<input v-model="user_list.user_name" type="tel" id="register-txt" placeholder="请输入手机号" />
 					</p>
 					<p>
-						<i></i>
+						<i style="font-size:30px" class="yo-ico">&#xe60a;</i>
 						<input type="text" placeholder="请输入短信验证码" />
 						<span class="register-identifying">获取验证码</span>
 					</p>
 					<p>
-						<i></i>
+						<i class="yo-ico">&#xe6b2;</i>
 					<input v-model="user_list.user_password" type="password" id="password" placeholder="请设置登录密码，4~16位" />
 					</p>
 				</div>
@@ -26,7 +28,7 @@
 				</div>
 				<router-link class="go-login" to="login" tag="a">
 					<p>已有账号登录</p>
-					<i></i>
+					<i class="yo-ico">&#xf07f;</i>
 				</router-link>
 			</section>
 		</form>
@@ -34,8 +36,7 @@
 </template>
 
 <script>
-//	import {mapState} from 'vuex'
-	
+	import {mapState} from 'vuex'
 	export default{
 		name:"app-register",
 		props:["back"],
@@ -44,21 +45,21 @@
 				user_list:{
 					user_name:'',
 					user_password:'',
-//					ids:1
 				},
-//				cd:[]
 			}
 		},
 		computed:{
-//			...mapState(['user_info'])
+			...mapState(['user_info'])
 		},
         methods:{
         	changeUser(params){
-        		console.log(params)
-//					console.log(localStorage.user_info)
-//      			this.cd.push(params)
-        			this.$store.commit('register',params)
+				if(params.user_name == ''){
+					alert('登陆失败');
+					return
+				}else{
+					this.$store.commit('register',params)
         			this.$router.push({name:'login'})
+				}
         	}
         }
 	}
@@ -71,11 +72,13 @@
 		border-bottom: 1px solid #d9d9d9;
     	background: #f5f5f5;
     	display: flex;
-    	i{
+    	.header-back{
     		display: block;
-    		width: .48rem;
-    		height: 100%;
-    		background: red;
+    		width: .47rem;
+			height: 100%;
+			text-align: center;
+			line-height: .48rem;
+			font-size: 18px;
     	}
     	p{
     		width: 2.95rem;
@@ -111,7 +114,9 @@
 					display: block;
 					width: .46rem;
 					height: .46rem;
-					background: red;
+					text-align: center;
+					line-height: .46rem;
+					font-size: 20px;
 				}
 				.register-identifying{
 					display: block;
@@ -166,12 +171,11 @@
 		    i{
 		    	display: block;
 		    	width: .48rem;
-		    	height: 100%;
-		    	background: red;
+				height: 100%;
+				text-align: center;
+				line-height: .45rem;
+				font-size: 18px;
 		    }
 		}
-	}
-	body{
-		background:#f8f8f8;
 	}
 </style>

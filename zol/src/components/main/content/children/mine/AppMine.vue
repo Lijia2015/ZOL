@@ -1,7 +1,9 @@
 <template>
 	<div class="app-mine my main-box">
 		<header>
-			<div @click="back" class="header-back"></div>
+			<div @click="back" class="header-back yo-ico">
+				&#xf07d;
+			</div>
 			<p>Z商城买家中心</p>
 			<div class="out">
 				退出
@@ -12,12 +14,14 @@
 				<div class="head-img">
 					<img src="https://icon.zol-img.com.cn/group/detail_images/zoler.jpg">
 				</div>
-				<p class="user"></p>
+				<p class="user">
+					{{JSON.parse(user_info).user_name}}
+				</p>
 				
 			</div>
 			<div class="acount">
 				<p>账号管理</p>
-				<i></i>
+				<i class="yo-ico">&#xf07f;</i>
 			</div>
 		</div>
 		<div class="my-order">
@@ -25,34 +29,56 @@
 		</div>
 		<div class="nav">
 			<div class="nav-item">
-				<i class="nav-icon"></i>
+				<i class="yo-ico">
+					&#xe665;
+				</i>
 				<a>待付款</a>
 			</div>
 			<div class="nav-item">
-				<i class="nav-icon"></i>
+				<i class="yo-ico">
+					&#xe629;
+				</i>
 				<a>待发货</a>
 			</div>
 			<div class="nav-item">
-				<i class="nav-icon"></i>
+				<i class="yo-ico">
+					&#xe670;
+				</i>
 				<a>待收货</a>
 			</div>
 			<div class="nav-item">
-				<i class="nav-icon"></i>
+				<i class="yo-ico">
+					&#xe632;
+				</i>
 				<a>待评价</a>
 			</div>
 			<div class="nav-item">
-				<i class="nav-icon"></i>
-				<a>全部订单 <span class="icon-right"></span></a>
+				<i class="yo-ico">
+					&#xe61b;
+				</i>
+				<a>
+				全部订单<span class="icon-right yo-ico">
+					&#xf07f;
+				</span>
+					
+				</a>
 			</div>
 		</div>
 		
 		<div class="enter">
-			<a v-for="enter in enters" class="enter-item">{{enter}}<span class="enter-icon"></span></a>
+			<a v-for="enter in enters" class="enter-item">
+				{{enter}}
+				<span class="enter-icon yo-ico">
+					&#xf07f;
+				</span>
+			</a>
 		</div>
 	</div>
 </template>
 
 <script>
+
+	import {mapState} from 'vuex'
 	export default{
 		name:'app-mine',
 		data(){
@@ -60,7 +86,10 @@
 				enters:["退款/售后","收货地址管理","我的优惠券","客服电话：400-688-1999"]
 			}
 		},
-		props:["back"]
+		props:["back"],
+		computed:{
+			...mapState(['user_info'])
+		},
 	}
 </script>
 
@@ -80,8 +109,11 @@
     	.header-back{
     		position: absolute;
     		width: .46rem;
-    		height: .45rem;
-    		background: yellow;
+			height: .45rem;
+			line-height: .45rem;
+			text-align: left;
+			font-size: 22px;
+			opacity: .7;
     	}
     	.out{
     		position: absolute;
@@ -125,8 +157,9 @@
     	  }
     	  .user{
     	  	width: .97rem;
-    	  	height: 16px;
-    	  	background: yellow;
+    	  	height: .16rem;
+    	  	text-align: center;
+    	  	line-height:.16rem ;
     	  }   
 	  }
 	  .acount{
@@ -138,12 +171,15 @@
 	  	display: flex;
 	  	align-items: center;
 	  	padding-top: .2rem;	  
-  		i{
-  		display: block;
-  		width: .15rem;
-  		height: .15rem;
-  		background: yellow;
-	  	}
+		i{
+			display: block;
+			width: .1rem;
+			height: .15rem;
+			text-align: center;
+			line-height: .15rem;
+			color: #fff;
+			margin:0 .01rem;
+		}
 	  }     
 	}
 	.my-order{
@@ -184,12 +220,14 @@
 			&:last-child{
 				border-left: 1px dashed #e6e6e6;
 			}
-			.nav-icon{
+			i{
 				display: block;
 				width: .3rem;
 				height: .3rem;
-				background: yellow;
-				
+				text-align: center;
+				line-height: .3rem;
+				font-size: 24px;
+				opacity: .5;
 			}
 			.icon-right{
 				position: absolute;
@@ -197,7 +235,7 @@
 				right: 0;
 				height: .1rem;
 				width: .1rem;
-				background: red;
+				font-size: 12px;
 			}
 		}
 	}
@@ -214,8 +252,11 @@
 		span{
 			height: 100%;
 			width: .2rem;
-			background: red;
 			margin-right: .2rem;
+			text-align: right;
+			line-height: .44rem;
+			color: #ccc;
+			font-size: 18px;
 		}
 	}
 </style>

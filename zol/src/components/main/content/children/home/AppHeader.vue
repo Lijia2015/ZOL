@@ -8,15 +8,16 @@
 	   		</div>
 	   		<span @click="isShow">
 	   			{{city}}
-	   			<i class="fa fa-angle-down"></i>
+	   			<i v-if="!positionShow" class="yo-ico">&#xf031;</i>
+	   			<i v-else class="yo-ico">&#xf027;</i>
 	   		</span>
 	   		<div class="search">
-	   			<i class="fa fa-search"></i>
+	   			<i class="yo-ico">&#xf067;</i>
 	   			<input type="text" placeholder="iphone7"/>
 	   		</div>
 	   		<a @click ='goLogin' class="login">
-	   			<em v-show="loginShow">登录</em>
-	   			<i v-show="!loginShow" class="yo-ico my-mine">&#xe68f;</i>
+	   			<em v-if="loginShow">登录</em>
+	   			<i v-if="!loginShow" class="yo-ico my-mine">&#xe68f;</i>
 	   		</a>
 	   </header>
 	   
@@ -54,6 +55,9 @@
 //      			alert(1)
         			this.$store.commit('loginShow')
 					this.$router.push({name:'mine'})
+        		}else{
+					this.$router.push({name:'login'})
+        			
         		}
         	},
         },
@@ -94,7 +98,8 @@
 				display: block;
 				width: .15rem;
 				height: .15rem;
-				background: yellow;
+				font-size: 18px;
+				opacity: .7;
 				text-align: center;
 				line-height: .15rem;
 			}
@@ -108,8 +113,7 @@
 			border-radius: .08rem;
 			i{
 				width: .18rem;
-				height: .18rem;
-				background: yellow;
+				height: .2rem;
 				color: #ccc;
 				font-size: 18px;
 				opacity: 0.7;

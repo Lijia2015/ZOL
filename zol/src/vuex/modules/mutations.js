@@ -29,8 +29,12 @@ const mutations = {
 		state.positionShow = !state.positionShow
 	},
 	loginShow(state){
-		state.loginShow = !state.loginShow
-		
+		let login_info = JSON.parse(localStorage.user_info)
+		if(login_info.user_name.length){
+			state.loginShow = false
+		}else{
+			state.loginShow = true
+		}
 	}
 }
 

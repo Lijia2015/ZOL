@@ -1,49 +1,56 @@
-
 //设置首页面的样式信息
-#app{
+#app {
     height: 100%;
 }
-.content-box{
+
+.content-box {
     height: 100%;
 }
-.app-main{
+
+.app-main {
     height: 100%;
     @include flexbox();
     @include flex-direction(column);
     @include justify-content(space-between);
     background: white;
-    
-    .main-box{
+    .main-box {
         @include flex();
         width: 100%;
         overflow-y: scroll;
     }
-    .app-footer{
+    .app-footer {
         height: 0.49rem;
         width: 100%;
         border-top: solid 1px #E0E0E0;
         @include flexbox();
         @include justify-content(space-around);
         @include align-items(center);
-        .foot-nav{
+        .foot-nav {
             color: #666;
             @include flexbox();
             @include flex-direction(column);
             @include align-items(center);
-            i{
+            i {
                 font-size: 0.18rem;
             }
-            span{
+            span {
                 font-size: 0.12rem;
             }
         }
-        .foot-cur{
+        .foot-cur {
             color: #ce1a1b;
         }
-        
     }
-    
 }
-    .mint-toast{
-        width: 2rem;
-    }
+
+.mint-toast {
+    width: 2rem;
+}
+
+//  .header-back{
+//      position: absolute;
+//      display: block;
+//      width: .4rem;
+//      height: .4rem;
+//      font-size: 20px;
+//  }
