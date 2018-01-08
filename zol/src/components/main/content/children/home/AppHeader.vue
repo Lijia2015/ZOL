@@ -14,34 +14,53 @@
 	   			<i class="fa fa-search"></i>
 	   			<input type="text" placeholder="iphone7"/>
 	   		</div>
-	   		<router-link to="/login" tag="a" class="login">
-	   			登录
-	   		</router-link>
+	   		<a @click ='goLogin' class="login">
+	   			<em v-show="loginShow">登录</em>
+	   			<i v-show="!loginShow" class="yo-ico my-mine">&#xe68f;</i>
+	   		</a>
 	   </header>
 	   
 	</div>
 </template>
-
 <script>
 	import AppPosition from './AppPosition'
 	import {mapState,mapActions} from 'vuex'
 	
+	
 	export default {
 		name:"app-header",
 		components:{AppPosition},
+		data(){
+			return{
+//				loginShow:true
+			}
+		},
 		computed:{
-        	...mapState(['city','positionShow'])
+        	...mapState(['city','positionShow','user_info','loginShow'])
         },
         methods:{
         	...mapActions(['getPosition']),
         	isShow(){
         		this.$store.commit('isShow')
-        	}
+        	},
+        	goLogin(params){
+        		if(this.user_info == ''){
+//					alert(1)
+					this.$router.push({name:'login'})
+					return
+				}
+        		let login_info = JSON.parse(localStorage.user_info)
+        		if(login_info.user_name.length){
+//      			alert(1)
+        			this.$store.commit('loginShow')
+					this.$router.push({name:'mine'})
+        		}
+        	},
         },
-//      mounted(){
-//      	//开始定位
-//      	this.getPosition()
-//      }
+        mounted(){
+        	//开始定位
+        	this.getPosition()
+        }
 	}
 </script>
 
@@ -120,6 +139,10 @@
 			text-align: center;
 			color: #fff;
 			font-size: 14px;
+		}
+		.my-mine{
+			font-size: 20px;
+			opacity: .6;
 		}
 	}
 </style>

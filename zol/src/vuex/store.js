@@ -6,8 +6,6 @@ Vue.use(Vuex)
 import state from './modules/state'
 import mutations from './modules/mutations'
 import actions from './modules/actions'
-//import getPosition from './modules/getPosition'
-
 
 
 //设置store管理的state/getter，mutations，actions等信息

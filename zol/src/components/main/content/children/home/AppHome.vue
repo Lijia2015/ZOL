@@ -3,7 +3,6 @@
      <app-header></app-header>
      <app-banner></app-banner>
      <app-nav></app-nav>
-   	<!--<router-view></router-view>-->
   </div>
 </template>
 

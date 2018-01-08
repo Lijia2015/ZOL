@@ -1,40 +1,66 @@
 <template>
-	<div class="app-register">
-		<header>
-			<i @click="back" class="header-back"></i>
-			<p>手机号快捷登录</p>
-		</header>
-		<section>
-			<div class="register-tel">
-				<p>
+	<div class="app-register" >
+		<form @submit.prevent = 'changeUser({user_name:user_list.user_name,user_password:user_list.user_password})'>
+			<header>
+				<i @click="back" class="header-back"></i>
+				<p>手机快速注册</p>
+			</header>
+			<section>
+				<div class="register-tel">
+					<p>
+						<i></i>
+						<input v-model="user_list.user_name" type="tel" id="register-txt" placeholder="请输入手机号" />
+					</p>
+					<p>
+						<i></i>
+						<input type="text" placeholder="请输入短信验证码" />
+						<span class="register-identifying">获取验证码</span>
+					</p>
+					<p>
+						<i></i>
+					<input v-model="user_list.user_password" type="password" id="password" placeholder="请设置登录密码，4~16位" />
+					</p>
+				</div>
+				<div class="register">
+					<input type="submit" id="register" value="注册中关村在线帐号">
+				</div>
+				<router-link class="go-login" to="login" tag="a">
+					<p>已有账号登录</p>
 					<i></i>
-					<input type="tel" id="register-txt" placeholder="请输入手机号" />
-				</p>
-				<p>
-					<i></i>
-					<input type="text" placeholder="请输入短信验证码" />
-					<span class="register-identifying">获取验证码</span>
-				</p>
-				<p>
-					<i></i>
-				<input type="password" id="password" placeholder="请设置登录密码，4~16位" />
-				</p>
-			</div>
-			<div class="register">
-				<input type="submit" id="register" value="注册中关村在线帐号">
-			</div>
-			<router-link class="go-login" to="login" tag="a">
-				<p>已有账号登录</p>
-				<i></i>
-			</router-link>
-		</section>
+				</router-link>
+			</section>
+		</form>
 	</div>
 </template>
 
 <script>
+//	import {mapState} from 'vuex'
+	
 	export default{
 		name:"app-register",
-		props:["back"]
+		props:["back"],
+		data(){
+			return{
+				user_list:{
+					user_name:'',
+					user_password:'',
+//					ids:1
+				},
+//				cd:[]
+			}
+		},
+		computed:{
+//			...mapState(['user_info'])
+		},
+        methods:{
+        	changeUser(params){
+        		console.log(params)
+//					console.log(localStorage.user_info)
+//      			this.cd.push(params)
+        			this.$store.commit('register',params)
+        			this.$router.push({name:'login'})
+        	}
+        }
 	}
 </script>
 
@@ -103,7 +129,6 @@
 					width: 3.33rem;
 					border-top: .01rem solid #d3d3d3;	
 				}
-				
 			}
 		}
 		.register{

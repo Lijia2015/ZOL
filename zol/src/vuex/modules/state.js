@@ -6,10 +6,10 @@
  */
 
 const state = {
-	
-	user:localStorage.user?JSON.parse(localStorage.user):'',	
-    city:'北京',
-	positionShow: false
+	user_info:localStorage.user_info ? localStorage.user_info : '',
+    city:'',
+	positionShow: false,
+	loginShow:true
 }
 
 export default state
