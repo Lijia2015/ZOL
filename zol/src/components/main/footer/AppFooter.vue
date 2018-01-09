@@ -29,7 +29,7 @@
 		name:"app-footer",
 		data(){
 			return{
-				type : '',
+				type : 'home',
 				navs:[
 					{id:1,name:'首页',path:'home'},
 					{id:2,name:'分类',path:'category'},

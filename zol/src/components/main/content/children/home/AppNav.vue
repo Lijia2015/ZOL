@@ -120,7 +120,53 @@
      <!--品牌精选-->
      <div class="brand-content category-content clearfix">
      	<header>品牌精选</header>
+     	<div class="item-container clearfix">
+     		<div class="tipP">
+     			<a :href="bTipPic.link">
+     				<img :src="bTipPic.imgUrl"/>
+     			</a>
+     		</div>
+     		<div class="item-content clearfix">
+     			<a :href="brand.link" v-for="brand in barands">
+     				<div class="item">
+     					<img :src="brand.imgUrl"/>
+     					<div class="info">{{brand.name}}</div>
+     				</div>
+     			</a>
+     		</div>
+     	</div>
      </div>
+     <!--电竞DIY-->
+     	<div class="DIY-content category-content clearfix">
+     		<header>电竞DIY</header>
+     		<div class="img-content clearfix">
+     			<div class="item" v-for="diy in diyGroup" :class="[diy.sign?'sign':'']">
+     				<a :href="diy.link">
+     					<img :src="diy.imgUrl"/>
+     				</a>
+     			</div>
+     		</div>
+     		<div class="good-container clearfix">
+     			<a :href="good.link" v-for="good in diyGoods">
+     				<div class="item-content">
+     					<img :src="good.imgUrl"/>
+     					<p class="desc">{{good.name}}</p>
+     					<p class="desc">{{good.desc}}</p>
+     					<p class="price">￥{{good.price}}</p>
+     				</div>
+     			</a>
+     		</div>
+     	</div>
+     	<div class="eleck-content category-content clearfix">
+     		<header>数码潮品</header>
+     		<div class="img-container clearfix">
+     			<div class="item" v-for="good in eleckGood" :class="[good.sign?'sign':'']">
+     				<a :href="good.link">
+     					<img :src="good.imgUrl"/>
+     				</a>
+     			</div>
+     		</div>
+     	</div>
   </div>
 </template>
 
@@ -143,15 +189,16 @@
         	selects:{},
         	barands:[],
         	bTipPic:{},
-        
+        	diyGroup:[],
+        	diyGoods:[],
+        	eleckGood:[]
         }
     },
 	    methods:{
         getData(){
             let that = this
             axios.get('/static/JSONS/GoodSAS.json').then((res)=>{
-        
-                console.log(res)
+  
                 //精选好店
                 that.stores = res.data.data.stores
                 that.storesLink = res.data.data.storesLink
@@ -175,7 +222,14 @@
                 
                 //品牌精选
                 that.barands = res.data.data.brandSelect.barands
-                that.bTipPic = res.data.databrandSelect.bTipPic
+                that.bTipPic = res.data.data.brandSelect.tipPic
+                
+                //电竞DIY
+                that.diyGroup = res.data.data.eleckDIY.imgGroup
+                that.diyGoods = res.data.data.eleckDIY.goods
+                
+                //数码潮品
+                that.eleckGood = res.data.data.eleckGood
                 
             }).catch((err)=>{
             	
@@ -460,6 +514,129 @@
 	.brand-content{
 		header{
 			text-align: center;
+		}
+		.item-container{
+			width: 100%;
+			display: flex;
+			.tipP{
+				width:35.2%;
+				a{
+					display: inline-block;
+					width: 100%;
+					img{
+						width: 100%;
+					}
+				}
+			}
+			.item-content{
+				width:64.8%;
+				a{
+					display: inline-block;
+					border:solid 1px #efefef;
+					box-sizing: border-box;
+					width: 50%;
+					height: 50%;
+					float: left;
+					.item{
+						width: 100%;
+						height:100%;
+						text-align:center;
+						display: flex;
+						flex-direction: column;
+						justify-content: space-between;
+						align-items: center;
+						img{
+							width: 80%;
+						}
+						.info{
+							height: 0.2rem;
+							background: rgba(0,0,0,0.6);
+							color: white;
+							font-size: 0.12rem;
+							width: 100%;
+							padding: 0 0.1rem;
+							box-sizing: border-box;
+							text-align: left;
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	.DIY-content{
+		header{
+			text-align: center;
+		}
+		.img-content{
+			border: solid 1px #efefef;
+			display: flex;
+			.item{
+				width: 1.15rem;
+				border-left: solid 1px #efefef;
+				a{
+					display: inline-block;
+					width: 100%;
+					img{
+						width: 100%;
+					}
+				}
+			}
+			.sign{
+				border: 0 none;
+			}
+		}
+		.good-container{
+			display: flex;
+			a{
+				display: inline-block;
+				width: 25%;
+				.item-content{
+					width: 100%;
+					display:flex;
+					flex-direction:column;
+					align-items:center;
+					img{
+						width: 100%;
+					}
+					.desc{
+						width: 100%;
+						text-overflow: ellipsis;
+				    overflow: hidden;
+				    white-space: nowrap;
+				    font-size: 0.12rem;
+				    color: #333;
+					}
+					.price{
+						font-size: 0.14rem;
+						color: #ce1a1b;
+						font-weight: bold;
+					}
+				}
+			}
+		}
+	}
+	
+	.eleck-content{
+		header{
+			text-align: center;
+		}
+		.img-container{
+			
+			.item{
+				float: left;
+				width: 57.3%;
+				border: solid 1px #efefef;
+				border-right: 0 none;
+				img{
+					box-sizing: border-box;
+					width: 100%;
+				}
+			}
+			.sign{
+				border-left: 0 none;
+				width: 42.7%;
+			}
 		}
 	}
 	

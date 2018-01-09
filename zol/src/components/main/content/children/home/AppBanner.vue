@@ -36,7 +36,6 @@
 					
 					that.banners = res.data.data.banners;
 					that.navs = res.data.data.navs;
-					console.log(res)
 					that.$nextTick(function(){
 						new Swiper('.banner-container',{
 							loop:true,
