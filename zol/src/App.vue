@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <router-view :back = "back"></router-view>
+  	<keep-alive>
+    	<router-view :back = "back"></router-view>
+    </keep-alive>
   </div>
 </template>
 

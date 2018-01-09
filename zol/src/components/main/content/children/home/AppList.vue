@@ -123,7 +123,6 @@
 	.app-list{
 		border-top: solid 0.1rem #f5f5f5;
 		header{
-			
 			height: 0.4rem;
 			line-height: 0.4rem;
 			color: #333;
@@ -135,10 +134,6 @@
 			background: white;
 			width: 100%;
 			height: 0.45rem;
-			position: static;
-			top: 0;
-			left: 0;
-			z-index: 999;
 			height: 0.45rem;
 			display: flex;
 			.nav-item{
