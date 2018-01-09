@@ -2,17 +2,19 @@
 	<div class="app-login">
 		<form @submit.prevent="onlogin({user_name:user_list.user_name,user_password:user_list.user_password})">
 			<header>
-				<i @click="back" class="header-back"></i>
+				<i @click="back" class="header-back yo-ico">
+					&#xf07d;
+				</i>
 				<p>手机号快捷登录</p>
 			</header>
 			<section>
 				<div class="tel">
 					<p>
-						<i></i>
+						<i class="yo-ico">&#xe68f;</i>
 						<input v-model="user_list.user_name" type="tel" id="txt" placeholder="请输入手机号" />
 					</p>
 					<p>
-						<i></i>
+						<i class="yo-ico">&#xe60a;</i>
 						<input v-model="user_list.user_password" type="text" placeholder="请输入短信验证码" />
 						<span class="identifying">获取验证码</span>
 					</p>
@@ -35,13 +37,16 @@
 					<p>使用第三方帐号登录</p>
 					<ul class="other-login-way">
 						<li>
-							<a href="#"></a>
+							<a href="http://service.zol.com.cn/user/api/qq/libs/oauth/redirect_to_login.php?comewap=1&amp;from=400&amp;backurl=http%3A%2F%2Fm.zol.com%2F" class="qq">
+							</a>
 						</li>
 						<li>
-							<a href="#"></a>
+							<a href="http://service.zol.com.cn/user/api/sina/jump.php?comewap=1&amp;from=400&amp;backurl=http%3A%2F%2Fm.zol.com%2F" class="weibo">
+							</a>
 						</li>
 						<li>
-							<a href="#"></a>
+							<a href="http://service.zol.com.cn/user/api/baidu/jump.php?comewap=1&amp;from=400&amp;backurl=http%3A%2F%2Fm.zol.com%2F&amp;display=mobile" class="baidu">
+							</a>
 						</li>
 					</ul>
 				</div>
@@ -100,11 +105,13 @@
 		border-bottom: 1px solid #d9d9d9;
     	background: #f5f5f5;
     	display: flex;
-    	i{
+    	.header-back{
     		display: block;
     		width: .48rem;
-    		height: 100%;
-    		background: red;
+			height: 100%;
+			text-align: center;
+			line-height: .48rem;
+			font-size: 18px;
     	}
     	p{
     		width: 2.95rem;
@@ -140,7 +147,9 @@
 					display: block;
 					width: .46rem;
 					height: .46rem;
-					background: red;
+					text-align: center;
+					line-height: .46rem;
+					font-size: 18px;
 				}
 				.identifying{
 					display: block;

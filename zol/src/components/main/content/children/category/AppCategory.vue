@@ -1,7 +1,7 @@
 <template>
 	<div class="app-category main-box">
 		<header>
-			<div @click="back" class="header-back"></div>
+			<div @click="back" class="header-back yo-ico">&#xf07d;</div>
 			<p>全部分类</p>
 		</header>
 	</div>
@@ -24,12 +24,14 @@
 		text-align: center;
 		line-height: .4rem;
 		color: #333;
+		font-size: 14px;
 		.header-back{
 			position: absolute;
 			display: block;
 			width: .4rem;
 			height: .4rem;
-			background: yellow;
+			font-size: 18px;
+			opacity: .7;
 		}
 	} 
 </style>

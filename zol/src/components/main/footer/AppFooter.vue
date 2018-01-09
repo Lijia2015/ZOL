@@ -5,7 +5,7 @@
 			<span>首页</span>
 		</div >
 		<div  class="foot-nav"@click="changeNav('category')" :class="[type=='category'?'foot-cur':'']">
-			<i class="yo-ico">&#xe6b2;</i>
+			<i class="yo-ico">&#xe600;</i>
 			<span>分类</span>
 		</div>
 		
