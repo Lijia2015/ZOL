@@ -81,10 +81,11 @@
 		font-size: 12px;
 		.logo{
 			margin-left: .1rem;
-			width: .55rem;
-			height: .4rem;
-			background:url(//icon.zol-img.com.cn/newshop/wap/shop/indexV2/logo.png) no-repeat 50% 50%;
-			background-size: 0.6rem .2rem;
+			
+		    width: 0.515rem;
+		    height: 0.24rem;
+		    background: url('/static/images/logo.png') no-repeat 50% 50%;
+		    background-size: 0.515rem 0.24rem;
 		}
 		span{
 			display: flex;

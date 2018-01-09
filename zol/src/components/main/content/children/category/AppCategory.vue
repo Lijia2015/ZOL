@@ -1,7 +1,7 @@
 <template>
 	<div class="app-category main-box">
 		<header>
-			<div @click="back" class="header-back yo-ico">&#xf07d;</div>
+			<!--<div @click="back" class="header-back yo-ico">&#xf07d;</div>-->
 			<p>全部分类</p>
 		</header>
 		<div class="category-container clearfix">

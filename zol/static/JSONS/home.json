@@ -1,9 +1,9 @@
 {
 	"data":{
 		"banners":[
-			{"id":1,"imgUrl":"/static/images/banners/banner1.jpg"},
-			{"id":2,"imgUrl":"/static/images/banners/banner2.jpg"},
-			{"id":3,"imgUrl":"/static/images/banners/banner3.jpg"}
+			{"id":1,"imgUrl":"https://mercrt-fd.zol-img.com.cn/g5/M00/0E/04/ChMkJ1pN9o-IRzXLAAMPVU2djycAAjzyQKwLvoAAw9t628.jpg"},
+			{"id":2,"imgUrl":"https://mercrt-fd.zol-img.com.cn/g5/M00/00/0F/ChMkJlpUbjyIFTCrAAKy4YHQceAAAj-cgGDUy4AArL5740.jpg"},
+			{"id":3,"imgUrl":"https://mercrt-fd.zol-img.com.cn/g5/M00/02/0E/ChMkJ1ovvsWIUxD6AAJROjQ_kxoAAjGSANBOvEAAlFS768.jpg"}
 		],
 		"navs":[
 			{"id":1,"imgUrl":"/static/images/navs/nav1.png","name":"团购"},

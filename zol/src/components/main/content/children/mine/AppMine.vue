@@ -1,9 +1,9 @@
 <template>
 	<div class="app-mine my main-box">
 		<header>
-			<div @click="back" class="header-back yo-ico">
+			<!--<div @click="back" class="header-back yo-ico">
 				&#xf07d;
-			</div>
+			</div>-->
 			<p>Z商城买家中心</p>
 			<div class="out">
 				退出

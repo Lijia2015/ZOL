@@ -38,14 +38,17 @@
 					<ul class="other-login-way">
 						<li>
 							<a href="http://service.zol.com.cn/user/api/qq/libs/oauth/redirect_to_login.php?comewap=1&amp;from=400&amp;backurl=http%3A%2F%2Fm.zol.com%2F" class="qq">
+								<img src="/static/images/iconts/tencent.png"/>
 							</a>
 						</li>
 						<li>
 							<a href="http://service.zol.com.cn/user/api/sina/jump.php?comewap=1&amp;from=400&amp;backurl=http%3A%2F%2Fm.zol.com%2F" class="weibo">
+								<img src="/static/images/iconts/sina.png"/>
 							</a>
 						</li>
 						<li>
 							<a href="http://service.zol.com.cn/user/api/baidu/jump.php?comewap=1&amp;from=400&amp;backurl=http%3A%2F%2Fm.zol.com%2F&amp;display=mobile" class="baidu">
+								<img src="/static/images/iconts/baidu.png"/>
 							</a>
 						</li>
 					</ul>
@@ -80,7 +83,6 @@
 					return
 				}
 				let login_info = JSON.parse(localStorage.user_info)
-//				console.log(login_info)
 				let that = this
 				setTimeout(()=>{
 					
@@ -228,10 +230,16 @@
 				margin: 0.2rem auto;
 				justify-content: space-around;
 				li{
-					width: .4rem;
-					height: .4rem;
-					background: yellow;
-					
+					width: 0.4rem;
+					height: 0.4rem;
+					a{
+						display: inline-block;
+						height: 100%;
+						width: 100%;
+						img{
+							width: 100%;
+						}
+					}
 				}
 			}
 		}
