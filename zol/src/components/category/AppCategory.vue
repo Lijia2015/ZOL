@@ -15,7 +15,7 @@
 					<h3>{{cate.name}}</h3>
 					<div class="cate-content clearfix">
 						<div class="cate-item clearfix" v-for="item in cate.items">
-							<router-link tag='a' @click.native='changeRouter' :to='{name:"detail"}'>
+							<router-link tag='a' @click.native='changeRouter' to='/detail/goods'>
 								<img :src="item.imgUrl"/>
 								<p>{{item.name}}</p>
 							</router-link>
@@ -64,7 +64,7 @@
 				this.type = type;
 			},
 			changeRouter(){
-				this.$router.push('detail')
+				
 				this.$store.commit('navHide')
 			}
 			

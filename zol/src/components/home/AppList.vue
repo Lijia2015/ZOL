@@ -10,7 +10,7 @@
 		</div>
 		<div class="list-content clearfix" v-infinite-scroll="loadMore" infinite-scroll-disabled="loading" infinite-scroll-distance="10">
 			<div class="item" v-for="good in goods">
-				<router-link tag='a' @click.native='goToDetail' to='detail'>
+				<router-link tag='a' @click.native='goToDetail' to='/detail/goods'>
 					<img :src="good.goods_pic"/>
 					<p>
 						<span v-if="good.tag">{{good.tag}}</span>
@@ -120,7 +120,7 @@
 				
 			},
 			goToDetail(){
-				this.$router.push('detail');
+				
 				this.$store.commit('navHide');
 			}
 		},

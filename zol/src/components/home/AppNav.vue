@@ -31,7 +31,7 @@
      		<div class="goods-container clearfix">
      			<div class="goods-item" v-for="goods in nearGoods">
      				
-     				<router-link tag='a' @click.native='goToDetail' to='detail'>
+     				<router-link tag='a' @click.native='goToDetail' to='/detail/goods'>
      					<img :src="goods.imgUrl"/>
      					<span>{{goods.name}}</span>
      					<span class="desc">{{goods.desc}}</span>
@@ -50,14 +50,14 @@
      		<a :href="tuanLink">更多 ></a>
      	</header>
      	<div class="recommend clearfix">
-     		<router-link tag='a' @click.native='goToDetail' to='detail'>
+     		<router-link tag='a' @click.native='goToDetail' to='/detail/goods'>
      			<img :src="recommend.imgUrl"/>
      		</router-link>
      		<span>{{recommend.node}}</span>
      	</div>
      	<div class="group-container clearfix">
      		<div v-for="group in groupShops">
-     			<router-link tag='a' @click.native='goToDetail' to='detail'>
+     			<router-link tag='a' @click.native='goToDetail' to='/detail/goods'>
 	     			<div class="group-item clearfix">
 	     				<img :src="group.imgUrl"/>
 	     			</div>
@@ -83,14 +83,14 @@
      	</div>
      	<div class="img-container clearfix">
      		<div v-for="item in cityItems">
-	     		<router-link tag='a' @click.native='goToDetail' to='detail'>
+	     		<router-link tag='a' @click.native='goToDetail' to='/detail/goods'>
 	     			<img :src="item.imgUrl"/>
 	     		</router-link>
      		</div>
      	</div>
      	<div class="good-container clearfix">
      		<a v-for="good in goods">
-	     		<router-link tag='div' @click.native='goToDetail' to='detail'>
+	     		<router-link tag='div' @click.native='goToDetail' to='/detail/goods'>
 	     			<div class="good-item clearfix" >
 		     			<img :src="good.imgUrl"/>
 		     			<span>{{good.name}}</span>
@@ -105,13 +105,13 @@
      <div class="mock-content category-content clearfix">
      	<header>Z智选</header>
      	<div class="mock-tip clearfix">
-     		<router-link tag='a' @click.native='goToDetail' to='detail'>
+     		<router-link tag='a' @click.native='goToDetail' to='/detail/goods'>
      			<img :src="tipPic.imgUrl"/>
      		</router-link>
      	</div>
      	<div class="mock-container clearfix">
      		<div v-for="select in selects" :class="[select.sign?'sign':'']">
-     			<router-link tag='a' @click.native='goToDetail' to='detail'>
+     			<router-link tag='a' @click.native='goToDetail' to='/detail/goods'>
 	     			<img :src="select.imgUrl"/>
 	     		</router-link>
      		</div>
@@ -124,13 +124,13 @@
      	<header>品牌精选</header>
      	<div class="item-container clearfix">
      		<div class="tipP">
-     			<router-link tag='a' @click.native='goToDetail' to='detail'>
+     			<router-link tag='a' @click.native='goToDetail' to='/detail/goods'>
      				<img :src="bTipPic.imgUrl"/>
      			</router-link>
      		</div>
      		<div class="item-content clearfix">
      			<div v-for="brand in barands">
-	     			<router-link tag='a' @click.native='goToDetail' to='detail'>
+	     			<router-link tag='a' @click.native='goToDetail' to='/detail/goods'>
 	     				<div class="item">
 	     					<img :src="brand.imgUrl"/>
 	     					<div class="info">{{brand.name}}</div>
@@ -145,14 +145,14 @@
      		<header>电竞DIY</header>
      		<div class="img-content clearfix">
      			<div class="item" v-for="diy in diyGroup" :class="[diy.sign?'sign':'']">
-     				<router-link tag='a' @click.native='goToDetail' to='detail'>
+     				<router-link tag='a' @click.native='goToDetail' to='/detail/goods'>
      					<img :src="diy.imgUrl"/>
      				</router-link>
      			</div>
      		</div>
      		<div class="good-container clearfix">
      			<a v-for="good in diyGoods">
-	     			<router-link tag='div' @click.native='goToDetail' to='detail'>
+	     			<router-link tag='div' @click.native='goToDetail' to='/detail/goods'>
 	     				<div class="item-content">
 	     					<img :src="good.imgUrl"/>
 	     					<p class="desc">{{good.name}}</p>
@@ -167,7 +167,7 @@
      		<header>数码潮品</header>
      		<div class="img-container clearfix">
      			<div class="item" v-for="good in eleckGood" :class="[good.sign?'sign':'']">
-     				<router-link tag='a' @click.native='goToDetail' to='detail'>
+     				<router-link tag='a' @click.native='goToDetail' to='/detail/goods'>
      					<img :src="good.imgUrl"/>
      				</router-link>
      			</div>
@@ -249,7 +249,6 @@
             })
         },
         goToDetail(){
-        	this.$router.push('detail');
 					this.$store.commit('navHide');
         }
     },
