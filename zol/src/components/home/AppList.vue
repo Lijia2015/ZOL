@@ -10,14 +10,14 @@
 		</div>
 		<div class="list-content clearfix" v-infinite-scroll="loadMore" infinite-scroll-disabled="loading" infinite-scroll-distance="10">
 			<div class="item" v-for="good in goods">
-				<a :href="good.goods_url">
+				<router-link tag='a' @click.native='goToDetail' to='detail'>
 					<img :src="good.goods_pic"/>
 					<p>
 						<span v-if="good.tag">{{good.tag}}</span>
 						{{good.goods_name}}
 					</p>
 					<p class="price">￥{{good.goods_price}}</p>
-				</a>
+				</router-link>
 			</div>
 		</div>
 	</div>
@@ -33,6 +33,8 @@
 	
 	//加载结果提示
 	import { Toast } from 'mint-ui'
+	
+	import {mapState} from 'vuex'
 	
 	export default{
 		name:'app-list',
@@ -50,6 +52,9 @@
 				isOver:false,
 				loading:false,
 			};
+		},
+		computed:{
+			...mapState(['user_info','footerShow'])
 		},
 		methods:{
 			dataLoad(){
@@ -114,6 +119,10 @@
 	        	}
 				
 			},
+			goToDetail(){
+				this.$router.push('detail');
+				this.$store.commit('navHide');
+			}
 		},
 	}
 </script>
@@ -122,6 +131,7 @@
 	
 	.app-list{
 		border-top: solid 0.1rem #f5f5f5;
+		clear: both;
 		header{
 			height: 0.4rem;
 			line-height: 0.4rem;

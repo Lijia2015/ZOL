@@ -9,7 +9,8 @@ const state = {
 	user_info:localStorage.user_info ? localStorage.user_info : '',
     city:'',
 	positionShow: false,
-	loginShow:true
+	loginShow:localStorage.user_info?false:true,
+	footerShow:true
 }
 
 export default state

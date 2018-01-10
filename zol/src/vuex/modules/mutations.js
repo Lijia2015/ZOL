@@ -35,6 +35,14 @@ const mutations = {
 		}else{
 			state.loginShow = true
 		}
+	},
+	navShow(state){
+		
+		state.footerShow = true
+	},
+	navHide(state){
+		
+		state.footerShow = false
 	}
 }
 

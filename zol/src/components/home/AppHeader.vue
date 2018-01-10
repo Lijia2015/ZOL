@@ -17,14 +17,14 @@
 	   		</div>
 	   		<a @click ='goLogin' class="login">
 	   			<em v-if="loginShow">登录</em>
-	   			<i v-if="!loginShow" class="yo-ico my-mine">&#xe68f;</i>
+	   			<i v-else class="yo-ico my-mine">&#xe68f;</i>
 	   		</a>
 	   </header>
 	   
 	</div>
 </template>
 <script>
-	import AppPosition from './AppPosition'
+	import AppPosition from '../position/AppPosition'
 	import {mapState,mapActions} from 'vuex'
 	
 	
@@ -33,7 +33,7 @@
 		components:{AppPosition},
 		data(){
 			return{
-//				loginShow:true
+//				
 			}
 		},
 		computed:{
@@ -46,13 +46,13 @@
         	},
         	goLogin(params){
         		if(this.user_info == ''){
-//					alert(1)
+					this.$store.commit('navHide')
 					this.$router.push({name:'login'})
 					return
 				}
         		let login_info = JSON.parse(localStorage.user_info)
         		if(login_info.user_name.length){
-//      			alert(1)
+        			
         			this.$store.commit('loginShow')
 					this.$router.push({name:'mine'})
         		}else{

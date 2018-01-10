@@ -31,12 +31,12 @@
      		<div class="goods-container clearfix">
      			<div class="goods-item" v-for="goods in nearGoods">
      				
-     				<a :href="'http://m.zol.com/index.php?c=Shop_Detail&goodsId='+goods.id">
+     				<router-link tag='a' @click.native='goToDetail' to='detail'>
      					<img :src="goods.imgUrl"/>
      					<span>{{goods.name}}</span>
      					<span class="desc">{{goods.desc}}</span>
      					<span><button>去看看</button></span>
-     				</a>
+     				</router-link>
      			</div>
      		</div>
      </div>
@@ -50,24 +50,23 @@
      		<a :href="tuanLink">更多 ></a>
      	</header>
      	<div class="recommend clearfix">
-     		<a :href="recommend.link">
+     		<router-link tag='a' @click.native='goToDetail' to='detail'>
      			<img :src="recommend.imgUrl"/>
-     		</a>
+     		</router-link>
      		<span>{{recommend.node}}</span>
      	</div>
      	<div class="group-container clearfix">
-     		
-     		<a :href="group.link" v-for="group in groupShops">
-     			<div class="group-item clearfix">
-     				<img :src="group.imgUrl"/>
-     			</div>
-     			<div class="price">
-     				<span>￥{{group.curPrice}}</span>
-     				<span class="old">￥{{group.oldPrice}}</span>
-     			</div>
-     			
-     		</a>
-     		
+     		<div v-for="group in groupShops">
+     			<router-link tag='a' @click.native='goToDetail' to='detail'>
+	     			<div class="group-item clearfix">
+	     				<img :src="group.imgUrl"/>
+	     			</div>
+	     			<div class="price">
+	     				<span>￥{{group.curPrice}}</span>
+	     				<span class="old">￥{{group.oldPrice}}</span>
+	     			</div>
+     			</router-link>
+     		</div>
      	</div>
      </div>
      
@@ -83,19 +82,22 @@
      		<a :href="cityShop.inStoreLink">更多 ></a>
      	</div>
      	<div class="img-container clearfix">
-     		<a :href="item.link" v-for="item in cityItems">
-     			<img :src="item.imgUrl"/>
-     		</a>
+     		<div v-for="item in cityItems">
+	     		<router-link tag='a' @click.native='goToDetail' to='detail'>
+	     			<img :src="item.imgUrl"/>
+	     		</router-link>
+     		</div>
      	</div>
      	<div class="good-container clearfix">
-     		<a :href="good.link" v-for="good in goods">
-     			<div class="good-item clearfix" >
-	     			<img :src="good.imgUrl"/>
-	     			<span>{{good.name}}</span>
-	     			<div class="price">￥{{good.price}}</div>
-	     		</div>
+     		<a v-for="good in goods">
+	     		<router-link tag='div' @click.native='goToDetail' to='detail'>
+	     			<div class="good-item clearfix" >
+		     			<img :src="good.imgUrl"/>
+		     			<span>{{good.name}}</span>
+		     			<div class="price">￥{{good.price}}</div>
+		     		</div>
+	     		</router-link>
      		</a>
-     		
      	</div>
      </div>
      
@@ -103,15 +105,15 @@
      <div class="mock-content category-content clearfix">
      	<header>Z智选</header>
      	<div class="mock-tip clearfix">
-     		<a :href="tipPic.link">
+     		<router-link tag='a' @click.native='goToDetail' to='detail'>
      			<img :src="tipPic.imgUrl"/>
-     		</a>
+     		</router-link>
      	</div>
      	<div class="mock-container clearfix">
      		<div v-for="select in selects" :class="[select.sign?'sign':'']">
-     			<a :href="select.link">
+     			<router-link tag='a' @click.native='goToDetail' to='detail'>
 	     			<img :src="select.imgUrl"/>
-	     		</a>
+	     		</router-link>
      		</div>
      		
      	</div>
@@ -122,17 +124,19 @@
      	<header>品牌精选</header>
      	<div class="item-container clearfix">
      		<div class="tipP">
-     			<a :href="bTipPic.link">
+     			<router-link tag='a' @click.native='goToDetail' to='detail'>
      				<img :src="bTipPic.imgUrl"/>
-     			</a>
+     			</router-link>
      		</div>
      		<div class="item-content clearfix">
-     			<a :href="brand.link" v-for="brand in barands">
-     				<div class="item">
-     					<img :src="brand.imgUrl"/>
-     					<div class="info">{{brand.name}}</div>
-     				</div>
-     			</a>
+     			<div v-for="brand in barands">
+	     			<router-link tag='a' @click.native='goToDetail' to='detail'>
+	     				<div class="item">
+	     					<img :src="brand.imgUrl"/>
+	     					<div class="info">{{brand.name}}</div>
+	     				</div>
+	     			</router-link>
+     			</div>
      		</div>
      	</div>
      </div>
@@ -141,19 +145,21 @@
      		<header>电竞DIY</header>
      		<div class="img-content clearfix">
      			<div class="item" v-for="diy in diyGroup" :class="[diy.sign?'sign':'']">
-     				<a :href="diy.link">
+     				<router-link tag='a' @click.native='goToDetail' to='detail'>
      					<img :src="diy.imgUrl"/>
-     				</a>
+     				</router-link>
      			</div>
      		</div>
      		<div class="good-container clearfix">
-     			<a :href="good.link" v-for="good in diyGoods">
-     				<div class="item-content">
-     					<img :src="good.imgUrl"/>
-     					<p class="desc">{{good.name}}</p>
-     					<p class="desc">{{good.desc}}</p>
-     					<p class="price">￥{{good.price}}</p>
-     				</div>
+     			<a v-for="good in diyGoods">
+	     			<router-link tag='div' @click.native='goToDetail' to='detail'>
+	     				<div class="item-content">
+	     					<img :src="good.imgUrl"/>
+	     					<p class="desc">{{good.name}}</p>
+	     					<p class="desc">{{good.desc}}</p>
+	     					<p class="price">￥{{good.price}}</p>
+	     				</div>
+	     			</router-link>
      			</a>
      		</div>
      	</div>
@@ -161,9 +167,9 @@
      		<header>数码潮品</header>
      		<div class="img-container clearfix">
      			<div class="item" v-for="good in eleckGood" :class="[good.sign?'sign':'']">
-     				<a :href="good.link">
+     				<router-link tag='a' @click.native='goToDetail' to='detail'>
      					<img :src="good.imgUrl"/>
-     				</a>
+     				</router-link>
      			</div>
      		</div>
      	</div>
@@ -172,6 +178,7 @@
 
 <script>
 	import axios from 'axios'
+	import {mapState} from 'vuex'
 	export default {
 	    name:"app-nav",
 	    data:function(){
@@ -193,7 +200,11 @@
         	diyGoods:[],
         	eleckGood:[]
         }
-    },
+      },
+      computed:{
+				...mapState(['user_info','footerShow'])
+			},
+    
 	    methods:{
         getData(){
             let that = this
@@ -237,6 +248,10 @@
             	
             })
         },
+        goToDetail(){
+        	this.$router.push('detail');
+					this.$store.commit('navHide');
+        }
     },
     created(){
         this.getData()

@@ -2,7 +2,7 @@
 	<div class="app-login">
 		<form @submit.prevent="onlogin({user_name:user_list.user_name,user_password:user_list.user_password})">
 			<header>
-				<i @click="back" class="header-back yo-ico">
+				<i @click="backHome" class="header-back yo-ico">
 					&#xf07d;
 				</i>
 				<p>手机号快捷登录</p>
@@ -74,7 +74,7 @@
 			}
 		},
 		computed:{
-			...mapState(['user_info','loginShow'])
+			...mapState(['user_info','loginShow','footerShow'])
 		},
 		methods:{
 			onlogin(params){
@@ -88,7 +88,8 @@
 					
 					if(login_info.user_name == params.user_name && login_info.user_password == params.user_password){
 						Toast("登陆成功")
-						this.$store.commit('loginShow')
+						that.$store.commit('loginShow')
+						that.$store.commit('navShow')
 						that.$router.push({name:'home'})
 					}else{
 						Toast('登陆失败');
@@ -96,6 +97,10 @@
 					
 				})
 			},
+			backHome(){
+				this.$store.commit('navShow')
+				this.$router.push({name:'home'})
+			}
 		}
 	}
 </script>

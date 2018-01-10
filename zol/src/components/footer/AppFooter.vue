@@ -1,5 +1,5 @@
 <template>
-	<div class="app-footer">
+	<div class="app-footer" v-if="footerShow">
 		<div  class="foot-nav" @click="changeNav('home')" :class="[type=='home'?'foot-cur':'']">
 			<i class="yo-ico">&#xe640;</i>
 			<span>首页</span>
@@ -29,7 +29,7 @@
 		name:"app-footer",
 		data(){
 			return{
-				type : 'home',
+				type:'home',
 				navs:[
 					{id:1,name:'首页',path:'home'},
 					{id:2,name:'分类',path:'category'},
@@ -39,7 +39,7 @@
 			}
 		},
 		computed:{
-			...mapState(['user_info'])
+			...mapState(['user_info','footerShow'])
 		},
 		methods:{
 			changeNav(name){
@@ -50,12 +50,16 @@
 				console.log(this.user_info)
 //				console.log(JSON.parse(this.user_info))
 				if(this.user_info == ''){
-					this.$router.push('/login')
+					
+					this.$store.commit('navHide')
+					
+					this.$router.push('login')
 				}else if(JSON.parse(localStorage.user_info).user_name){
 					this.type = name
 					this.$router.push(name)
 				}else{
-					this.$router.push('/login')
+					this.$store.commit('navHide')
+					this.$router.push('login')
 				}
 			},
 			

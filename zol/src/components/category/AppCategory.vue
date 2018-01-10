@@ -15,10 +15,10 @@
 					<h3>{{cate.name}}</h3>
 					<div class="cate-content clearfix">
 						<div class="cate-item clearfix" v-for="item in cate.items">
-							<a :href="item.link">
+							<router-link tag='a' @click.native='changeRouter' :to='{name:"detail"}'>
 								<img :src="item.imgUrl"/>
 								<p>{{item.name}}</p>
-							</a>
+							</router-link>
 						</div>
 					</div>
 				</div>
@@ -31,6 +31,8 @@
 	
 	import axios from 'axios'
 	
+	import {mapState} from 'vuex'
+	
 	export default{
 		name:"app-category",
 		props:["back"],
@@ -39,6 +41,9 @@
 				navs:[],
 				type:'hot'
 			};
+		},
+		computed:{
+			...mapState(['user_info','footerShow'])
 		},
 		methods:{
 			
@@ -57,6 +62,10 @@
 			changeType(type){
 				
 				this.type = type;
+			},
+			changeRouter(){
+				this.$router.push('detail')
+				this.$store.commit('navHide')
 			}
 			
 		},
