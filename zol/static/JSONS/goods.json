@@ -1,0 +1,55 @@
+{
+	"data":{
+		"banners":[
+			{
+				"imgUrl":"https://mercrt-fd.zol-img.com.cn/t_s600x600/g5/M00/06/0A/ChMkJ1m1DdKIGjJAAAF7CE4lmfIAAgVkgOtlmAAAXsg475.jpg"
+			},
+			{
+				"imgUrl":"https://mercrt-fd.zol-img.com.cn/t_s600x600/g5/M00/0D/0B/ChMkJ1mWaZOIfaXDAALKOc4uewwAAfx1wM6lbwAAspR232.jpg"
+			},
+			{
+				"imgUrl":"https://mercrt-fd.zol-img.com.cn/t_s600x600/g5/M00/06/0A/ChMkJlm1DdaIYQTSAAF4-ZnswA0AAgVkgPP4dQAAXkR410.jpg"
+			},
+			{
+				"imgUrl":"https://mercrt-fd.zol-img.com.cn/t_s600x600/g5/M00/06/0A/ChMkJ1m1Dd6IHJ2EAAGnqoahic0AAgVkwBCVLMAAafC082.jpg"
+			}
+		],
+		"name":"【顺丰包邮 送壳膜】荣耀9  6GB运行 全网通 双卡双待 移动联通电信4G",
+		"desc":"2000万变焦双摄，3D曲面极光玻璃，美得有声有色！",
+		"price":2188,
+		"detry":0,
+		"sellNum":293,
+		"start":"上海",
+		"parch":"5元优惠券　3元优惠券　10元优惠券",
+		"promise":[
+			{
+				"pro":"先行赔付",
+				"imgUrl":"/static/images/pros/"
+			},
+			{
+				"pro":"行货保证",
+				"imgUrl":"/static/images/pros/"
+			},
+			{
+				"pro":"无忧退换",
+				"imgUrl":"/static/images/pros/"
+			},
+			{
+				"pro":"发票保障",
+				"imgUrl":"/static/images/pros/"
+			},
+			{
+				"pro":"快递包邮",
+				"imgUrl":"/static/images/pros/"
+			},
+			{
+				"pro":"同城三小时送达",
+				"imgUrl":"/static/images/pros/"
+			}
+		],
+		"rate":"99%",
+		"ser":5,
+		"speed":5,
+		"arg":5
+	}
+}

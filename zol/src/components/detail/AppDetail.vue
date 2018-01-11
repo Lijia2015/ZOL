@@ -34,12 +34,12 @@
 			};
 		},
 		computed:{
-			...mapState(['user_info','footerShow'])
+			...mapState(['user_info','footerShow','curGoods'])
 		},
 		methods:{
 			
 			backHome(){
-				this.$router.push('home')
+				this.$router.go(-1);
 				this.$store.commit('navShow')
 			},
 			changeNav(type){
@@ -47,6 +47,10 @@
 				this.type = type;
 				this.$router.replace(type)
 			}
+		},
+		mounted(){
+			console.log(this.curGoods)
+			
 		}
 	}
 </script>

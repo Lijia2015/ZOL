@@ -43,6 +43,12 @@ const mutations = {
 	navHide(state){
 		
 		state.footerShow = false
+	},
+	jumpDetail(state,parmas){
+		
+		parmas.num = 0;
+		
+		state.curGoods = parmas;
 	}
 }
 

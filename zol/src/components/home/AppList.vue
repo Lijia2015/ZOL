@@ -1,5 +1,5 @@
 <template>
-	<div class="app-list main-box">
+	<div class="app-list clearfix">
 		<header>
 			精选优品
 		</header>
@@ -10,7 +10,7 @@
 		</div>
 		<div class="list-content clearfix" v-infinite-scroll="loadMore" infinite-scroll-disabled="loading" infinite-scroll-distance="10">
 			<div class="item" v-for="good in goods">
-				<router-link tag='a' @click.native='goToDetail' to='/detail/goods'>
+				<router-link tag='a' @click.native='goToDetail(good)' to='/detail/goods'>
 					<img :src="good.goods_pic"/>
 					<p>
 						<span v-if="good.tag">{{good.tag}}</span>
@@ -65,7 +65,7 @@
 				});
 				var that = this;
 				axios.defaults.withCredentials = true;//传输cookie
-				axios.get('http://localhost:8080/zol/index.php',{
+				axios.get('http://192.168.191.1:8080/zol/index.php',{
 					
 					params:{
 						c:'Shop_IndexV2',
@@ -119,9 +119,9 @@
 	        	}
 				
 			},
-			goToDetail(){
-				
+			goToDetail(parmas){
 				this.$store.commit('navHide');
+				this.$store.commit('jumpDetail',parmas)
 			}
 		},
 	}

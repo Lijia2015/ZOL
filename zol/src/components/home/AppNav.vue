@@ -11,10 +11,10 @@
      		<div class="store-container clearfix">
      			<div class="store-item clearfix" v-for="store in stores">
      				<a :href="store.link">
-     					<img :src="store.imgUrl">
+     					<img :src="store.goods_pic">
      				</a>
      				<div class="info">
-							  <span>{{store.name}}</span>
+							  <span>{{store.goods_name}}</span>
 							  <p>
 							  	<a :href="store.address">查看地址 ></a>
 							  </p>  
@@ -31,9 +31,9 @@
      		<div class="goods-container clearfix">
      			<div class="goods-item" v-for="goods in nearGoods">
      				
-     				<router-link tag='a' @click.native='goToDetail' to='/detail/goods'>
-     					<img :src="goods.imgUrl"/>
-     					<span>{{goods.name}}</span>
+     				<router-link tag='a' @click.native='goToDetail(goods)' to='/detail/goods'>
+     					<img :src="goods.goods_pic"/>
+     					<span>{{goods.goods_name}}</span>
      					<span class="desc">{{goods.desc}}</span>
      					<span><button>去看看</button></span>
      				</router-link>
@@ -50,16 +50,16 @@
      		<a :href="tuanLink">更多 ></a>
      	</header>
      	<div class="recommend clearfix">
-     		<router-link tag='a' @click.native='goToDetail' to='/detail/goods'>
-     			<img :src="recommend.imgUrl"/>
+     		<router-link tag='a' @click.native='goToDetail(recommend)' to='/detail/goods'>
+     			<img :src="recommend.goods_pic"/>
      		</router-link>
      		<span>{{recommend.node}}</span>
      	</div>
      	<div class="group-container clearfix">
      		<div v-for="group in groupShops">
-     			<router-link tag='a' @click.native='goToDetail' to='/detail/goods'>
+     			<router-link tag='a' @click.native='goToDetail(group)' to='/detail/goods'>
 	     			<div class="group-item clearfix">
-	     				<img :src="group.imgUrl"/>
+	     				<img :src="group.goods_pic"/>
 	     			</div>
 	     			<div class="price">
 	     				<span>￥{{group.curPrice}}</span>
@@ -83,18 +83,18 @@
      	</div>
      	<div class="img-container clearfix">
      		<div v-for="item in cityItems">
-	     		<router-link tag='a' @click.native='goToDetail' to='/detail/goods'>
-	     			<img :src="item.imgUrl"/>
+	     		<router-link tag='a' @click.native='goToDetail(item)' to='/detail/goods'>
+	     			<img :src="item.goods_pic"/>
 	     		</router-link>
      		</div>
      	</div>
      	<div class="good-container clearfix">
      		<a v-for="good in goods">
-	     		<router-link tag='div' @click.native='goToDetail' to='/detail/goods'>
+	     		<router-link tag='div' @click.native='goToDetail(good)' to='/detail/goods'>
 	     			<div class="good-item clearfix" >
-		     			<img :src="good.imgUrl"/>
-		     			<span>{{good.name}}</span>
-		     			<div class="price">￥{{good.price}}</div>
+		     			<img :src="good.goods_pic"/>
+		     			<span>{{good.goods_name}}</span>
+		     			<div class="price">￥{{good.goods_price}}</div>
 		     		</div>
 	     		</router-link>
      		</a>
@@ -105,14 +105,14 @@
      <div class="mock-content category-content clearfix">
      	<header>Z智选</header>
      	<div class="mock-tip clearfix">
-     		<router-link tag='a' @click.native='goToDetail' to='/detail/goods'>
-     			<img :src="tipPic.imgUrl"/>
+     		<router-link tag='a' @click.native='goToDetail(tipPic)' to='/detail/goods'>
+     			<img :src="tipPic.goods_pic"/>
      		</router-link>
      	</div>
      	<div class="mock-container clearfix">
      		<div v-for="select in selects" :class="[select.sign?'sign':'']">
-     			<router-link tag='a' @click.native='goToDetail' to='/detail/goods'>
-	     			<img :src="select.imgUrl"/>
+     			<router-link tag='a' @click.native='goToDetail(select)' to='/detail/goods'>
+	     			<img :src="select.goods_pic"/>
 	     		</router-link>
      		</div>
      		
@@ -124,16 +124,16 @@
      	<header>品牌精选</header>
      	<div class="item-container clearfix">
      		<div class="tipP">
-     			<router-link tag='a' @click.native='goToDetail' to='/detail/goods'>
-     				<img :src="bTipPic.imgUrl"/>
+     			<router-link tag='a' @click.native='goToDetail(bTipPic)' to='/detail/goods'>
+     				<img :src="bTipPic.goods_pic"/>
      			</router-link>
      		</div>
      		<div class="item-content clearfix">
      			<div v-for="brand in barands">
-	     			<router-link tag='a' @click.native='goToDetail' to='/detail/goods'>
+	     			<router-link tag='a' @click.native='goToDetail(brand)' to='/detail/goods'>
 	     				<div class="item">
-	     					<img :src="brand.imgUrl"/>
-	     					<div class="info">{{brand.name}}</div>
+	     					<img :src="brand.goods_pic"/>
+	     					<div class="info">{{brand.goods_name}}</div>
 	     				</div>
 	     			</router-link>
      			</div>
@@ -145,19 +145,19 @@
      		<header>电竞DIY</header>
      		<div class="img-content clearfix">
      			<div class="item" v-for="diy in diyGroup" :class="[diy.sign?'sign':'']">
-     				<router-link tag='a' @click.native='goToDetail' to='/detail/goods'>
-     					<img :src="diy.imgUrl"/>
+     				<router-link tag='a' @click.native='goToDetail(diy)' to='/detail/goods'>
+     					<img :src="diy.goods_pic"/>
      				</router-link>
      			</div>
      		</div>
      		<div class="good-container clearfix">
      			<a v-for="good in diyGoods">
-	     			<router-link tag='div' @click.native='goToDetail' to='/detail/goods'>
+	     			<router-link tag='div' @click.native='goToDetail(good)' to='/detail/goods'>
 	     				<div class="item-content">
-	     					<img :src="good.imgUrl"/>
-	     					<p class="desc">{{good.name}}</p>
+	     					<img :src="good.goods_pic"/>
+	     					<p class="desc">{{good.goods_name}}</p>
 	     					<p class="desc">{{good.desc}}</p>
-	     					<p class="price">￥{{good.price}}</p>
+	     					<p class="price">￥{{good.goods_price}}</p>
 	     				</div>
 	     			</router-link>
      			</a>
@@ -167,8 +167,8 @@
      		<header>数码潮品</header>
      		<div class="img-container clearfix">
      			<div class="item" v-for="good in eleckGood" :class="[good.sign?'sign':'']">
-     				<router-link tag='a' @click.native='goToDetail' to='/detail/goods'>
-     					<img :src="good.imgUrl"/>
+     				<router-link tag='a' @click.native='goToDetail(good)' to='/detail/goods'>
+     					<img :src="good.goods_pic"/>
      				</router-link>
      			</div>
      		</div>
@@ -248,8 +248,9 @@
             	
             })
         },
-        goToDetail(){
+        goToDetail(parmas){
 					this.$store.commit('navHide');
+					this.$store.commit('jumpDetail',parmas)
         }
     },
     created(){

@@ -15,9 +15,9 @@
 					<h3>{{cate.name}}</h3>
 					<div class="cate-content clearfix">
 						<div class="cate-item clearfix" v-for="item in cate.items">
-							<router-link tag='a' @click.native='changeRouter' to='/detail/goods'>
-								<img :src="item.imgUrl"/>
-								<p>{{item.name}}</p>
+							<router-link tag='a' @click.native='changeRouter(item)' to='/detail/goods'>
+								<img :src="item.goods_pic"/>
+								<p>{{item.goods_name}}</p>
 							</router-link>
 						</div>
 					</div>
@@ -63,9 +63,10 @@
 				
 				this.type = type;
 			},
-			changeRouter(){
+			changeRouter(parmas){
 				
 				this.$store.commit('navHide')
+				this.$store.commit('jumpDetail',parmas)
 			}
 			
 		},
@@ -80,7 +81,7 @@
 
 <style lang="scss" scoped>
 	
-	.main-box{
+	.app-category{
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;

@@ -11,8 +11,11 @@ html,body,#app{
     padding-bottom: 0.49rem;
 }
 
-.app-detail,.det-box{
+.app-detail{
     height: 100%;
+    header{
+        position: absolute;
+    }
  }
 
 .app-footer {
@@ -45,4 +48,9 @@ html,body,#app{
 
 .mint-toast {
     width: 2rem;
+}
+
+.det-box{
+    height: 100%;
+    padding-top: 0.49rem;
 }

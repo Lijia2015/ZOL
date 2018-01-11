@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-  	<keep-alive>
-    	<router-view :back = "back"></router-view>
-    </keep-alive>
+  	
+    <router-view :back = "back"></router-view>
+    
     <app-footer></app-footer>
   </div>
 </template>
