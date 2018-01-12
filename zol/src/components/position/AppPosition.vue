@@ -7,7 +7,7 @@
        </div>       
        <ul class="global-city-box">
        		<li class="global">
-       			{{city}}
+       			全国
        		</li>
        </ul>
        <div class="title">
@@ -42,7 +42,7 @@
         	changeCity(city){
         		this.getPosition(city)
         		//跳转回main
-        		this.$router.replace({name:'main'})
+        		this.$store.commit('isShow')
         	}
         }
     }

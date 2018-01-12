@@ -1,7 +1,9 @@
 
 
 const getPosition = (cb)=>{
-
+	
+	console.log("开始定位了")
+	
 	var map, geolocation;
     //加载地图，调用浏览器定位服务
     map = new AMap.Map('container', {
@@ -36,6 +38,8 @@ const getPosition = (cb)=>{
 //              	latitude:pos[1],
 //              	longitude:pos[0]
 //              }
+
+				console.log(city)
                 cb(city)
             }
         });
