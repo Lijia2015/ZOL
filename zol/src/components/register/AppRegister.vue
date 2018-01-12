@@ -148,6 +148,7 @@
 				text-align: center;
 				line-height: .4rem;
 				margin-top: .2rem;
+				background: #E6E6E6;
 				
 			}
 		}
