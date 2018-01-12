@@ -7,7 +7,7 @@
        </div>       
        <ul class="global-city-box">
        		<li class="global">
-       			全国
+       			{{curCity}}
        		</li>
        </ul>
        <div class="title">
@@ -31,7 +31,8 @@
             	 '北京','成都','青岛','西安','郑州','石家庄','平顶山','上海',
             	 '德阳','邯郸','邢台','秦皇岛','衡水','沧州','承德','唐山',
             	 '开封','驻马店','安阳','新乡','廊坊','保定','宝鸡'
-            	 ]
+            	 ],
+            	 curCity:"全国"
             }
         },
         computed:{
@@ -43,6 +44,7 @@
         		this.getPosition(city)
         		//跳转回main
         		this.$store.commit('isShow')
+        		this.curCity = city
         	}
         }
     }

@@ -57,13 +57,16 @@
 
 <style lang="scss" scoped>
 	header{
+		position: fixed;
+		left: 0;
+		top: 0;
+		z-index: 999;
 		width: 100%;
 		height: .48rem;
 		border-bottom: 1px solid #d9d9d9;
     	background: #f5f5f5;
     	display: flex;
     	justify-content: space-between;
-    	
     	.header-back{
     		padding-left: 0.05rem;
     		box-sizing: border-box;

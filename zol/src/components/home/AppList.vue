@@ -141,6 +141,10 @@
 			border-bottom: solid 1px #f5f5f5;
 		}
 		.app-nav{
+			position: static;
+			z-index: 999;
+			left: 0;
+			top: 0;
 			background: white;
 			width: 100%;
 			height: 0.45rem;

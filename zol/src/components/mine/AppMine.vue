@@ -5,7 +5,7 @@
 				&#xf07d;
 			</div>-->
 			<p>Z商城买家中心</p>
-			<div class="out">
+			<div class="out" @click="singOut">
 				退出
 			</div>
 		</header>
@@ -90,10 +90,19 @@
 		computed:{
 			...mapState(['user_info'])
 		},
+		methods:{
+			singOut(){
+				localStorage.removeItem('user_info')
+				this.$router.replace('home')
+			}
+		}
 	}
 </script>
 
 <style lang="scss" scoped>
+	.my{
+		overflow-x: hidden;
+	}
 	header{
 		width: 100%;
 		height: .46rem;

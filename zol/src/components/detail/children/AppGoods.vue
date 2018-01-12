@@ -102,6 +102,7 @@
 <style lang="scss" scoped>
 	.app-goods{
 		overflow-y: scroll;
+		padding-bottom: 0.48rem;
 	}
 	
 	.intro{

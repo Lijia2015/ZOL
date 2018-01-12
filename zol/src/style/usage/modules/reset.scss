@@ -1,4 +1,6 @@
-
+body{
+    -webkit-overflow-scrolling: touch;
+}
 .clearfix::after{
     content: '';
     display: block;
