@@ -44,21 +44,16 @@
         	isShow(){
         		this.$store.commit('isShow')
         	},
-        	goLogin(params){
-        		if(this.user_info == ''){
+        	goLogin(){
+        		if(!this.user_info){
 					this.$store.commit('navHide')
 					this.$router.push({name:'login'})
-					return
-				}
-        		let login_info = JSON.parse(localStorage.user_info)
-        		if(login_info.user_name.length){
-        			
-        			this.$store.commit('loginShow')
+					
+				}else{
+					this.$store.commit('loginShow')
+					this.$store.commit('changeNavType','mine')
 					this.$router.push({name:'mine'})
-        		}else{
-					this.$router.push({name:'login'})
-        			
-        		}
+				}
         	},
         },
         mounted(){

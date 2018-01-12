@@ -11,7 +11,8 @@ const state = {
 	positionShow: false,
 	loginShow:localStorage.user_info?false:true,
 	footerShow:true,
-	curGoods:{}
+	curGoods:{},
+	navType:localStorage.navType ? localStorage.navType : "home"
 }
 
 export default state

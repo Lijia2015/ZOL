@@ -1,6 +1,6 @@
 <template>
 	<div class="app-login">
-		<form @submit.prevent="onlogin({user_name:user_list.user_name,user_password:user_list.user_password})">
+		<form @submit.prevent="onlogin({'user_name':user_list.user_name,'user_password':user_list.user_password})">
 			<header>
 				<i @click="backHome" class="header-back yo-ico">
 					&#xf07d;
@@ -78,28 +78,41 @@
 		},
 		methods:{
 			onlogin(params){
-				if(this.user_info == ''){
-					Toast('登陆失败');
-					return
-				}
-				let login_info = JSON.parse(localStorage.user_info)
+				
 				let that = this
-				setTimeout(()=>{
+				
+				if(localStorage.user_info){
 					
-					if(login_info.user_name == params.user_name && login_info.user_password == params.user_password){
-						Toast("登陆成功")
-						that.$store.commit('loginShow')
-						that.$store.commit('navShow')
-						that.$router.push({name:'home'})
-					}else{
-						Toast('登陆失败');
-					}
+					let login_info = JSON.parse(localStorage.user_info)
 					
-				})
+					setTimeout(()=>{
+					
+						if(params.user_name == login_info.user_name && params.user_password == login_info.user_password){
+							Toast("登陆成功")
+							that.$store.commit('loginShow')
+							that.$store.commit('navShow')
+							that.$store.commit('loginState')
+							that.$store.commit('changeNavType','home')
+							that.$router.push({name:'home'})
+						}else{
+							Toast('登陆失败');
+						}
+						
+					})
+					
+				}else{
+					
+					Toast('请您先注册账号');
+					
+				}
+				
+				
 			},
 			backHome(){
 				this.$store.commit('navShow')
+				this.$store.commit('changeNavType','home')
 				this.$router.push({name:'home'})
+				
 			}
 		}
 	}
