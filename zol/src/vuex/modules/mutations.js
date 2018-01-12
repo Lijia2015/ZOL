@@ -6,18 +6,13 @@ const mutations = {
 	//注册
 	register(state,user_info){
 		//更改state中的user数据
-		state.user_info = user_info
 		localStorage.user_info = JSON.stringify(user_info)
 	},
 	
-//	login(state,user_info){
-//		let login_info = JSON.parse(localStorage.user_info)
-//		if(login_info.user_name == user_info.user_name && login_info.user_password == user_info.user_password){
-//			alert("登陆成功")
-//		}else{
-//			alert("登陆失败")
-//		}
-//	},
+	//登录状态
+	loginState(state){
+		state.user_info = localStorage.user_info ? localStorage.user_info : ''
+	},
 	
 	
 	//定位
@@ -28,27 +23,43 @@ const mutations = {
 	isShow(state){
 		state.positionShow = !state.positionShow
 	},
+	
+	//首页登录显示状态
 	loginShow(state){
-		let login_info = JSON.parse(localStorage.user_info)
-		if(login_info.user_name.length){
+		
+		if(localStorage.user_info){
 			state.loginShow = false
 		}else{
 			state.loginShow = true
 		}
 	},
+	
+	//底部导航的显示
 	navShow(state){
 		
 		state.footerShow = true
 	},
+	
+	//底部导航的隐藏
 	navHide(state){
 		
 		state.footerShow = false
 	},
+	
+	//跳转详情
 	jumpDetail(state,parmas){
 		
 		parmas.num = 0;
 		
 		state.curGoods = parmas;
+	},
+	
+	//底部导航的切换效果
+	changeNavType(state,type){
+		
+		localStorage.navType = type
+		
+		state.navType = localStorage.navType
 	}
 }
 

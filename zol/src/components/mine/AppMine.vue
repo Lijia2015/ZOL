@@ -93,6 +93,9 @@
 		methods:{
 			singOut(){
 				localStorage.removeItem('user_info')
+				this.$store.commit('changeNavType','home')
+				this.$store.commit('loginShow')
+				this.$store.commit('loginState')
 				this.$router.replace('home')
 			}
 		}
