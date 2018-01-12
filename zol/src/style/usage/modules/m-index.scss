@@ -9,6 +9,7 @@ html,body,#app{
     height: 100%;
     overflow-y: scroll;
     padding-bottom: 0.49rem;
+    
 }
 
 .app-detail{
@@ -18,33 +19,6 @@ html,body,#app{
     }
  }
 
-.app-footer {
-    height: 0.49rem;
-    width: 100%;
-    border-top: solid 1px #E0E0E0;
-    background: rgba(255,255,255,0.8);
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    @include flexbox();
-    @include justify-content(space-around);
-    @include align-items(center);
-    .foot-nav {
-        color: #666;
-        @include flexbox();
-        @include flex-direction(column);
-        @include align-items(center);
-        i {
-            font-size: 0.18rem;
-        }
-        span {
-            font-size: 0.12rem;
-        }
-    }
-    .foot-cur {
-        color: #ce1a1b;
-    }
-}
 
 .mint-toast {
     width: 2rem;

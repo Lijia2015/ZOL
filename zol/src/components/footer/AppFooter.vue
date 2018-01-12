@@ -62,5 +62,31 @@
 </script>
 
 <style lang="scss">
-
+	.app-footer {
+	    height: 0.49rem;
+	    width: 100%;
+	    border-top: solid 1px #E0E0E0;
+	    background: rgba(255,255,255,0.8);
+	    position: fixed;
+	    left: 0;
+	    bottom: 0;
+	    display: flex;
+	    justify-content:space-around;
+	    align-items:center;
+	    .foot-nav {
+	        color: #666;
+	        display: flex;
+	        flex-direction:column;
+	        align-items:center;
+	        i {
+	            font-size: 0.18rem;
+	        }
+	        span {
+	            font-size: 0.12rem;
+	        }
+	    }
+	    .foot-cur {
+	        color: #ce1a1b;
+	    }
+	}
 </style>
