@@ -6,13 +6,13 @@
  */
 
 const state = {
-	user_info:localStorage.user_info ? localStorage.user_info : '',
-    city:'',
+	user_info: localStorage.user_info ? localStorage.user_info : '',
+    city: '',
 	positionShow: false,
-	loginShow:localStorage.user_info?false:true,
-	footerShow:true,
-	curGoods:{},
-	navType:localStorage.navType ? localStorage.navType : "home"
+	loginShow: localStorage.user_info?false:true,
+	footerShow: true,
+	curGoods: {},
+	navType: localStorage.navType ? localStorage.navType : "home"
 }
 
 export default state

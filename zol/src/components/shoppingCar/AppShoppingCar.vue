@@ -21,24 +21,31 @@
 				</div>
 			</transition>
 		</div>
-		<div class="shopping-cart-empty">
+
+		<div class="shopping-cart-empty" v-if="false">
 			<p>
 				购物车空空如也，快去逛逛吧！
 				<i class="car-icon yo-ico">&#xe621;</i>
 			</p>
 			<a href=""></a>
 		</div>
+
+		<app-good-car></app-good-car>
 	</div>
 </template>
 
 <script>
+	import AppGoodCar from "./AppGoodCar"
 	export default{
 		name:'app-shopCar',
 		data(){
 			return{
-				isShow:false
+				isShow:false,
 			}
 		},
+		components: {
+		   	AppGoodCar
+		 },
 		methods:{
 			mainShow(){
 				this.isShow = !this.isShow
@@ -163,18 +170,7 @@ header{
 		    border-radius: 50%;
 		    background: #f7f7f7;
 	    }
-	    /*.car-icon{
-    	    position: absolute;
-		    top: 25px;
-		    left: 50%;
-		    margin: 0 0 0 -32px;
-		    content: "";
-		    display: block;
-		    width: 56px;
-		    height: 56px;
-		    background-size: 56px 56px;
-		    background: yellow;
-	    }*/
 	}
 }
+
 </style>

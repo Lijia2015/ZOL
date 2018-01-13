@@ -52,13 +52,9 @@
 			...mapState(['user_info','footerShow','curGoods'])
 		},
 		methods:{
-			
 			getData(){
-				
 				let that = this;
-				
 				axios.get('static/JSONS/goods.json').then((res)=>{
-					
 					console.log(res)
 					that.name = res.data.data.name
 					that.desc = res.data.data.desc
@@ -90,6 +86,9 @@
 					alert('客官，您还没有登录')
 				}else{
 					console.log(this.curGoods)
+//					this.$router.replace('/car')
+//      			this.$store.commit('saveGoods',goods)
+        			
 				}
 			}
 		},
