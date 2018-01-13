@@ -26,7 +26,6 @@ const mutations = {
 	
 	//首页登录显示状态
 	loginShow(state){
-		
 		if(localStorage.user_info){
 			state.loginShow = false
 		}else{
@@ -36,31 +35,39 @@ const mutations = {
 	
 	//底部导航的显示
 	navShow(state){
-		
 		state.footerShow = true
 	},
 	
 	//底部导航的隐藏
 	navHide(state){
-		
 		state.footerShow = false
 	},
 	
 	//跳转详情
 	jumpDetail(state,parmas){
-		
 		parmas.num = 0;
-		
 		state.curGoods = parmas;
 	},
 	
 	//底部导航的切换效果
 	changeNavType(state,type){
-		
 		localStorage.navType = type
-		
 		state.navType = localStorage.navType
-	}
+	},
+	
+	//保存详情页商品信息
+//	saveGoods(state,goods){
+//		console.log(goods)
+//		state.curGoods = goods
+//		
+//	}
+	
+	
+	
+	
+	
+	
+	
 }
 
 export default mutations
