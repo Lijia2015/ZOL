@@ -34,7 +34,7 @@
 	import Swiper from 'swiper'
 	import axios from 'axios'
 	import {mapState,mapMutations} from 'vuex'
-	
+	import { Toast } from 'mint-ui'
 	export default{
 		name:'app-goods',
 		data(){
@@ -87,9 +87,13 @@
 					alert('客官，您还没有登录')
 				}else{
 					
-					console.log(this.curGoods)
-					
 					this.$store.commit('addGoodsNum',this.curGoods)
+					setTimeout(function(){
+						Toast({
+						  message: '已经加入购物车了',
+						  position:'bottom'
+						});
+					},1000)
 				}
 			}
 		},

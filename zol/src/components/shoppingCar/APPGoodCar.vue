@@ -4,9 +4,11 @@
 		<div class="app-good-car shopBox clearfix">
 			<div class="shopping-list clearfix">
 				<div class="shop-title">
-					<input  class="goods-radio" type="checkbox" value="">
-					<div class="good-name">
-	                    	迪信通官方旗舰店                                    
+					<div class="tD">
+						<input  class="goods-radio" type="checkbox" value="">
+						<div class="good-name">
+		                    	迪信通官方旗舰店                                    
+						</div>
 					</div>
 					<div class="edit" @click="editGoods(goods)">
 							编辑
@@ -86,25 +88,29 @@
 		width: 100%;
 		height: .46rem;
 		display: flex;
+		justify-content: space-between;
 		color: #333;
-		.goods-radio{
+		.tD{
+			display: flex;
+			.goods-radio{
 			
-			width: 0.18rem;
-			height: 0.18rem;
-			margin: 0.15rem 0 0 0.1rem;
+				width: 0.18rem;
+				height: 0.18rem;
+				margin: 0.15rem 0 0 0.1rem;
+			}
+			.good-name{
+				width: 1.26rem;
+				height: 100%;
+				line-height: .46rem;
+				margin:0 .1rem;	
+			}
 		}
-		.good-name{
-			width: 1.26rem;
-			height: 100%;
-			line-height: .46rem;
-			margin:0 .1rem;	
-		}
-
 		.edit{
-			width: 1.8rem;
+			width: 0.46rem;
 			height: 100%;
 			text-align: right;
 			line-height: .46rem;
+			text-align: center;
 		}
 	}
 	

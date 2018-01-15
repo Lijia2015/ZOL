@@ -88,6 +88,7 @@ const mutations = {
 		
 		//与数据库数据同步一下
 		localStorage.shopCars = JSON.stringify(state.shopCars);
+		
 	},
 	
 	//编辑购车
