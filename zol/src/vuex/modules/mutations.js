@@ -46,6 +46,7 @@ const mutations = {
 	//跳转详情
 	jumpDetail(state,parmas){
 		parmas.num = 0;
+		parmas.isEdit = false;
 		state.curGoods = parmas;
 	},
 	
@@ -55,18 +56,76 @@ const mutations = {
 		state.navType = localStorage.navType
 	},
 	
-	//保存详情页商品信息
-//	saveGoods(state,goods){
-//		console.log(goods)
-//		state.curGoods = goods
-//		
-//	}
+	//初始化购物车
+	initGoogCar(state){
+		state.shopCars = [];
+	},
 	
+	//加入购物车
+	addGoodsNum(state,params){
+		
+		let isHas = state.shopCars.some((item)=>{//判断购物车中是否含有当前的商品
+			
+			if(item.goods_id == params.goods_id){
+				
+				item.num ++;
+				
+				return true;
+				
+			}else{
+				
+				return false;
+			}
+			
+		});
+		
+		if(!isHas){
+			
+			params.num = 1;
+			
+			state.shopCars.push(params)
+		}
+		
+		//与数据库数据同步一下
+		localStorage.shopCars = JSON.stringify(state.shopCars);
+	},
 	
+	//编辑购车
+	editGoodsCar(state,params){
+		
+		state.shopCars.some((item)=>{//判断购物车中是否含有当前的商品
+			
+			if(item.goods_id == params.goods_id){
+				
+				item.isEdit = !item.isEdit;
+				
+				return true;
+				
+			}else{
+				
+				return false;
+			}
+			
+		});
+		
+		//与数据库数据同步一下
+		localStorage.shopCars = JSON.stringify(state.shopCars);
+	},
 	
-	
-	
-	
+	//删除购物车
+	removeGoodsCar(state,params){
+		
+		let len = state.shopCars.length;
+		
+		for(var i = 0; i < len; i++){
+			
+			if(state.shopCars[i].goods_id == params.goods_id){
+				state.shopCars.splice(i,1);
+				break;
+			}
+		}
+		localStorage.shopCars = JSON.stringify(state.shopCars);
+	}
 	
 }
 

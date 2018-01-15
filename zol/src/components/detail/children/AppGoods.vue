@@ -33,7 +33,7 @@
 	
 	import Swiper from 'swiper'
 	import axios from 'axios'
-	import {mapState} from 'vuex'
+	import {mapState,mapMutations} from 'vuex'
 	
 	export default{
 		name:'app-goods',
@@ -49,9 +49,10 @@
 			}
 		},
 		computed:{
-			...mapState(['user_info','footerShow','curGoods'])
+			...mapState(['user_info','footerShow','curGoods','shopCars'])
 		},
 		methods:{
+			...mapMutations(['addGoodsNum','reduceGoodsNum']),
 			getData(){
 				let that = this;
 				axios.get('static/JSONS/goods.json').then((res)=>{
@@ -85,10 +86,10 @@
 				if(this.user_info == ''){
 					alert('客官，您还没有登录')
 				}else{
+					
 					console.log(this.curGoods)
-//					this.$router.replace('/car')
-//      			this.$store.commit('saveGoods',goods)
-        			
+					
+					this.$store.commit('addGoodsNum',this.curGoods)
 				}
 			}
 		},

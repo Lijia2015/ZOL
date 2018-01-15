@@ -12,7 +12,8 @@ const state = {
 	loginShow: localStorage.user_info?false:true,
 	footerShow: true,
 	curGoods: {},
-	navType: localStorage.navType ? localStorage.navType : "home"
+	navType: localStorage.navType ? localStorage.navType : "home",
+	shopCars: localStorage.shopCars ?  JSON.parse(localStorage.shopCars): []
 }
 
 export default state

@@ -22,20 +22,25 @@
 			</transition>
 		</div>
 
-		<div class="shopping-cart-empty" v-if="false">
+		<div class="shopping-cart-empty" v-if="!shopCars.length">
 			<p>
 				购物车空空如也，快去逛逛吧！
 				<i class="car-icon yo-ico">&#xe621;</i>
 			</p>
 			<a href=""></a>
 		</div>
-
-		<app-good-car></app-good-car>
+		<div class="shopping-container" v-else>
+			<app-good-car :key='goods.goods_id' :goods='goods' v-for='goods in shopCars'></app-good-car>
+		</div>
+		
 	</div>
 </template>
 
 <script>
 	import AppGoodCar from "./AppGoodCar"
+	
+	import {mapState} from 'vuex'
+	
 	export default{
 		name:'app-shopCar',
 		data(){
@@ -43,13 +48,21 @@
 				isShow:false,
 			}
 		},
+		computed:{
+			...mapState(['shopCars'])
+		},
 		components: {
 		   	AppGoodCar
 		 },
 		methods:{
+			
 			mainShow(){
 				this.isShow = !this.isShow
 			}
+		},
+		created(){
+			
+			console.log(this.shopCars)
 		}
 	}
 </script>

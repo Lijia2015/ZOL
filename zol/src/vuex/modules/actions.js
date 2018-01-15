@@ -5,10 +5,6 @@ const actions = {
 			commit('getPosition',city)
 		})
 	},
-	
-	
-	
-	
 }
 
 export default actions
