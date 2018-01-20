@@ -61,7 +61,6 @@
 			}
 		},
 		created(){
-			
 			console.log(this.shopCars)
 		}
 	}

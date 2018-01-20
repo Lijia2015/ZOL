@@ -219,7 +219,7 @@
 			font-size: 14px;
 			height: .36rem;
 			padding: 0 0.1rem;
-			background: #ff6700;
+			background: #ccc;
 			border-radius: 2px;
 			color: #fff;
 			text-align: center;
